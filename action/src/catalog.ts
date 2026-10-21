@@ -1,3 +1,4 @@
+import { lookup } from "node:dns/promises";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import type { AliasFile, DeprecationFile, PriceFile, ResolvedModel } from "./types.js";
@@ -9,20 +10,45 @@ export interface Catalog {
   resolve(model: string): ResolvedModel | null;
 }
 
-const BLOCKED_HOSTS = new Set(["localhost", "127.0.0.1", "0.0.0.0", "::1", "169.254.169.254"]);
+const MAX_CATALOG_BYTES = 20_000_000;
+const BLOCKED_NAMES = new Set(["localhost", "metadata.google.internal", "metadata.internal"]);
 
 export function assertPublicHttps(raw: string): URL {
   let url: URL;
   try {
     url = new URL(raw);
   } catch {
-    throw new Error(`Price catalog URL is not valid: ${raw}`);
+    throw new Error("Price catalog URL is not valid.");
   }
-  if (url.protocol !== "https:") throw new Error(`Price catalog URL must be https: ${raw}`);
-  if (BLOCKED_HOSTS.has(url.hostname) || url.hostname.endsWith(".localhost")) {
-    throw new Error(`Price catalog URL host is not allowed: ${url.hostname}`);
-  }
+  if (url.protocol !== "https:") throw new Error("Price catalog URL must be https.");
+  if (url.username || url.password) throw new Error("Price catalog URL must not include credentials.");
+  if (url.search) throw new Error("Price catalog URL must not include a query string.");
+  if (isBlockedAddress(url.hostname)) throw new Error("Price catalog URL host is not allowed.");
   return url;
+}
+
+export function isBlockedAddress(hostname: string): boolean {
+  const host = hostname.replace(/^\[|\]$/g, "").toLowerCase();
+  if (!host || BLOCKED_NAMES.has(host) || host.endsWith(".localhost") || host.endsWith(".local")) return true;
+  if (host.includes(":")) return ipv6Blocked(host);
+  const match = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/.exec(host);
+  if (!match) return false;
+  const parts = match.slice(1).map((part) => Number(part));
+  if (parts.some((part) => part > 255)) return true;
+  const [a, b] = parts;
+  if (a === 0 || a === 10 || a === 127 || a === 255) return true;
+  if (a === 169 && b === 254) return true;
+  if (a === 172 && b >= 16 && b <= 31) return true;
+  if (a === 192 && b === 168) return true;
+  if (a === 100 && b >= 64 && b <= 127) return true;
+  return false;
+}
+
+function ipv6Blocked(host: string): boolean {
+  if (host === "::" || host === "::1") return true;
+  if (host.startsWith("fe80:") || host.startsWith("fc") || host.startsWith("fd")) return true;
+  if (host.startsWith("::ffff:")) return isBlockedAddress(host.slice("::ffff:".length));
+  return false;
 }
 
 export function siblingUrl(raw: string, fileName: string): string {
@@ -92,11 +118,40 @@ export function bundledDataDir(): string {
 }
 
 export async function fetchCatalogJson(url: string): Promise<unknown> {
-  assertPublicHttps(url);
-  const response = await fetch(url, {
-    headers: { accept: "application/json", "user-agent": "modeldrift" },
-    signal: AbortSignal.timeout(60_000),
-  });
-  if (!response.ok) throw new Error(`GET ${url} failed with ${response.status}`);
-  return response.json();
+  let current = url;
+  for (let hop = 0; hop < 3; hop += 1) {
+    const parsed = assertPublicHttps(current);
+    await assertResolvedAddress(parsed.hostname);
+    const response = await fetch(parsed, {
+      redirect: "manual",
+      headers: { accept: "application/json", "user-agent": "modeldrift" },
+      signal: AbortSignal.timeout(60_000),
+    });
+    if (response.status >= 300 && response.status < 400) {
+      const location = response.headers.get("location");
+      if (!location) throw new Error("Catalog redirect is missing a location.");
+      current = new URL(location, parsed).toString();
+      continue;
+    }
+    if (!response.ok) throw new Error(`Catalog request failed with status ${response.status}.`);
+    const declared = Number(response.headers.get("content-length") || "0");
+    if (Number.isFinite(declared) && declared > MAX_CATALOG_BYTES) throw new Error("Catalog response is too large.");
+    const text = await response.text();
+    if (text.length > MAX_CATALOG_BYTES) throw new Error("Catalog response is too large.");
+    return JSON.parse(text) as unknown;
+  }
+  throw new Error("Too many catalog redirects.");
+}
+
+async function assertResolvedAddress(hostname: string): Promise<void> {
+  if (isBlockedAddress(hostname)) throw new Error("Price catalog URL host is not allowed.");
+  let records: Array<{ address: string }>;
+  try {
+    records = await lookup(hostname, { all: true, verbatim: true });
+  } catch {
+    throw new Error("Price catalog host could not be resolved.");
+  }
+  if (records.length === 0 || records.some((record) => isBlockedAddress(record.address))) {
+    throw new Error("Price catalog URL host is not allowed.");
+  }
 }

@@ -1,3 +1,6 @@
+# Least privilege for callers: contents: read, plus pull-requests: write
+# or issues: write only when posting a comment or issue. This action never
+# pushes commits. Do not run it from pull_request_target. See SECURITY.md.
 name: "ModelDrift"
 description: "Scan hard-coded LLM model names and token prices and report drift against a public catalog."
 author: "ronterry132-blip"
@@ -10,7 +13,7 @@ inputs:
     required: false
     default: "."
   prices-url:
-    description: "HTTPS URL for prices.json, or a worker /prices endpoint. Falls back to the catalog shipped with the action."
+    description: "Optional public https catalog URL. Leave empty to use the shipped catalog and make no network call. No credentials or query string. Redirects are rechecked."
     required: false
     default: ""
   aliases-url:
@@ -46,11 +49,11 @@ inputs:
     required: false
     default: "true"
   mode:
-    description: "auto comments on pull requests and opens an issue on schedule. Also comment, issue, or report."
+    description: "auto comments on pull_request and opens an issue on schedule. Also comment, issue, or report. pull_request_target is refused."
     required: false
     default: "auto"
   github-token:
-    description: "Token used for pull request comments and issues. Needs pull-requests: write or issues: write."
+    description: "Used only to post a comment or issue. Grant contents: read, plus pull-requests: write or issues: write. The action never pushes commits. Do not use pull_request_target."
     required: false
     default: ${{ github.token }}
   ignore:
@@ -66,7 +69,7 @@ inputs:
     required: false
     default: "true"
   report-path:
-    description: "Where to write the JSON report. Defaults to RUNNER_TEMP/modeldrift-report.json."
+    description: "JSON report path inside the workspace or runner temp. Default is runner temp. The action does not commit or push this file."
     required: false
     default: ""
   max-findings:

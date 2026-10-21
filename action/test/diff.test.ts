@@ -66,8 +66,12 @@ describe("diff", () => {
     const findings = findingsFor("prices.py", '"gpt-4o": {"input": 999, "output": 999}\n');
     const report = buildReport({ findings, scannedFiles: 1, catalog, maxFindings: 20 });
     expect(report.markdown.startsWith(REPORT_MARKER)).toBe(true);
-    expect(report.markdown).toContain("price changed");
+    expect(report.markdown).toContain("Possible drift, please verify.");
+    expect(report.markdown).toContain("possible price change");
+    expect(report.markdown).toContain("not financial, legal, or purchasing advice");
+    expect(report.markdown).toContain("Copyright (c) 2023 Berri AI");
     expect(report.markdown).toContain("`gpt-4o`");
+    expect(report.markdown).not.toContain("<script>");
     expect(report.hasDrift).toBe(true);
   });
 });

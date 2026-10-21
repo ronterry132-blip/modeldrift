@@ -3,6 +3,9 @@ import type { Catalog } from "./catalog.js";
 
 export const REPORT_MARKER = "<!-- modeldrift-report -->";
 
+export const DISCLAIMER =
+  "Price data comes from third-party sources, including LiteLLM's model_prices_and_context_window.json (MIT, Copyright (c) 2023 Berri AI; files under enterprise/ are not used). It may be inaccurate or out of date. It is informational only, not financial, legal, or purchasing advice, and is provided as-is without warranty. Verify rates against the provider's pricing page before you rely on them.";
+
 export function buildReport(options: {
   findings: Finding[];
   scannedFiles: number;
@@ -29,12 +32,19 @@ export function buildReport(options: {
 }
 
 export function renderMarkdown(report: DriftReport): string {
-  const lines: string[] = [REPORT_MARKER, "", "## ModelDrift", ""];
+  const lines: string[] = [
+    REPORT_MARKER,
+    "",
+    "## ModelDrift",
+    "",
+    "Possible drift, please verify. Findings are advisory and may be wrong. This check does not modify the repository.",
+    "",
+  ];
   if (!report.hasDrift) {
-    lines.push(`No hard-coded model drift in ${report.scannedFiles} scanned files.`, "");
+    lines.push(`No possible drift in ${report.scannedFiles} scanned files.`, "");
   } else {
     lines.push(
-      `Found **${report.driftCount}** drift finding${report.driftCount === 1 ? "" : "s"} in ${report.scannedFiles} scanned files.`,
+      `Found **${report.driftCount}** possible drift finding${report.driftCount === 1 ? "" : "s"} in ${report.scannedFiles} scanned files.`,
       "",
       "| Status | Model | Location | Detail |",
       "| --- | --- | --- | --- |",
@@ -52,25 +62,25 @@ export function renderMarkdown(report: DriftReport): string {
   const generated = report.catalogGeneratedAt ? ` Catalog generated ${report.catalogGeneratedAt}.` : "";
   const source = report.sourceUrl ? ` Source: ${report.sourceUrl}.` : "";
   const license = report.license ? ` License: ${report.license}.` : "";
-  lines.push(`Prices are USD per 1M tokens.${generated}${source}${license}`, "");
+  lines.push(`Prices are USD per 1M tokens.${generated}${source}${license}`, "", DISCLAIMER, "");
   return lines.join("\n");
 }
 
 function statusLabel(kind: Finding["kind"]): string {
   switch (kind) {
     case "price_changed":
-      return "price changed";
+      return "possible price change";
     case "deprecated":
-      return "deprecated";
+      return "possibly deprecated";
     case "retired":
-      return "retired";
+      return "possibly retired";
     case "unknown":
-      return "unknown model";
+      return "unrecognized model";
   }
 }
 
 function detail(finding: Finding): string {
-  if (finding.kind === "unknown") return "No matching entry in the price catalog.";
+  if (finding.kind === "unknown") return "No matching catalog entry. Please verify the model id.";
   if (finding.kind === "price_changed") {
     const parts: string[] = [];
     if (finding.inputFound != null && finding.inputExpected != null && finding.inputFound !== finding.inputExpected) {
@@ -84,8 +94,8 @@ function detail(finding: Finding): string {
   const when = finding.sunset ? ` on ${finding.sunset}` : "";
   const replacement = finding.replacement ? ` Replacement: \`${finding.replacement}\`.` : "";
   const note = finding.note ? ` ${finding.note}` : "";
-  const verb = finding.kind === "retired" ? "Retired" : "Deprecated";
-  return `${verb}${when}.${replacement}${note}`.trim();
+  const verb = finding.kind === "retired" ? "Catalog marks this retired" : "Catalog marks this deprecated";
+  return `${verb}${when}.${replacement}${note} Please verify.`.trim();
 }
 
 function money(value: number): string {
@@ -101,5 +111,11 @@ function percent(found: number, expected: number): string {
 }
 
 function escapeCell(value: string): string {
-  return value.replace(/\|/g, "\\|").replace(/\n/g, " ");
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/`/g, "'")
+    .replace(/\|/g, "\\|")
+    .replace(/\n/g, " ");
 }

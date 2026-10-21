@@ -21,6 +21,12 @@ import { buildReport } from "./report.js";
 import { scanRepo } from "./scanner.js";
 
 async function run(): Promise<void> {
+  const event = process.env.GITHUB_EVENT_NAME ?? "";
+  if (event === "pull_request_target") {
+    throw new Error(
+      "ModelDrift refuses pull_request_target. That event uses the base repository token and can publish untrusted pull request content. Use pull_request. See SECURITY.md.",
+    );
+  }
   const cwd = process.cwd();
   const scanPath = input("path", ".");
   const useConfig = boolInput("use-config", true);
@@ -50,7 +56,7 @@ async function run(): Promise<void> {
     maxFindings,
   });
 
-  const reportPath = core.getInput("report-path").trim() || path.join(process.env.RUNNER_TEMP || os.tmpdir(), "modeldrift-report.json");
+  const reportPath = resolveReportPath(cwd, core.getInput("report-path"));
   mkdirSync(path.dirname(reportPath), { recursive: true });
   writeFileSync(reportPath, `${JSON.stringify(report, null, 2)}\n`);
   core.setOutput("drift-count", String(report.driftCount));
@@ -66,8 +72,20 @@ async function run(): Promise<void> {
   await publish(mode, comment, report);
 
   if (failOnDrift && report.hasDrift) {
-    core.setFailed(`ModelDrift found ${report.driftCount} hard-coded model drift finding(s).`);
+    core.setFailed(`ModelDrift found ${report.driftCount} possible drift finding(s). Please verify.`);
   }
+}
+
+function resolveReportPath(cwd: string, requested: string): string {
+  const target = path.resolve(requested.trim() || path.join(process.env.RUNNER_TEMP || os.tmpdir(), "modeldrift-report.json"));
+  const inside = (root: string) => {
+    const relative = path.relative(path.resolve(root), target);
+    return relative === "" || (!relative.startsWith("..") && !path.isAbsolute(relative));
+  };
+  if (!inside(cwd) && !inside(process.env.RUNNER_TEMP || os.tmpdir())) {
+    throw new Error("report-path must stay inside the workspace or the runner temp directory.");
+  }
+  return target;
 }
 
 async function loadRequestedCatalog(allowFallback: boolean): Promise<Catalog> {
@@ -98,7 +116,7 @@ async function loadRequestedCatalog(allowFallback: boolean): Promise<Catalog> {
     return loadCatalog(prices, aliases ?? bundled.aliases, deprecations ?? bundled.deprecations);
   } catch (error) {
     if (!allowFallback) throw error;
-    core.warning(`Live price catalog failed (${errorMessage(error)}). Using the catalog shipped with the action.`);
+    core.warning(`Live price catalog request failed (${errorMessage(error)}). Using the catalog shipped with the action.`);
     return readBundled();
   }
 }
@@ -108,7 +126,7 @@ async function fetchOptional(url: string, allowFallback: boolean): Promise<unkno
     return await fetchCatalogJson(url);
   } catch (error) {
     if (!allowFallback) throw error;
-    core.warning(`Could not fetch ${url} (${errorMessage(error)}). Using the shipped file.`);
+    core.warning(`Optional catalog file was not fetched (${errorMessage(error)}). Using the shipped file.`);
     return null;
   }
 }
@@ -122,13 +140,14 @@ async function publish(mode: string, comment: boolean, report: Awaited<ReturnTyp
   const event = process.env.GITHUB_EVENT_NAME ?? "";
   let effective = mode;
   if (mode === "auto") {
-    if ((event === "pull_request" || event === "pull_request_target") && comment) effective = "comment";
-    else if (event === "schedule" || event === "workflow_dispatch") effective = event === "schedule" ? "issue" : "report";
+    if (event === "pull_request" && comment) effective = "comment";
+    else if (event === "schedule") effective = "issue";
     else effective = "report";
   }
   if (effective === "report") return;
 
   const token = core.getInput("github-token");
+  if (token) core.setSecret(token);
   const repository = process.env.GITHUB_REPOSITORY ?? "";
   const [owner, repo] = repository.split("/");
   if (!token || !owner || !repo) {

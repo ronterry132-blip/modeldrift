@@ -14,6 +14,11 @@ describe("catalog urls", () => {
     expect(() => assertPublicHttps("http://example.com/prices")).toThrow(/https/);
     expect(() => assertPublicHttps("https://localhost/prices")).toThrow(/not allowed/);
     expect(() => assertPublicHttps("https://169.254.169.254/prices")).toThrow(/not allowed/);
+    expect(() => assertPublicHttps("https://10.1.2.3/prices")).toThrow(/not allowed/);
+    expect(() => assertPublicHttps("https://192.168.0.5/prices")).toThrow(/not allowed/);
+    expect(() => assertPublicHttps("https://[::1]/prices")).toThrow(/not allowed/);
+    expect(() => assertPublicHttps("https://user:pass@example.com/prices")).toThrow(/credentials/);
+    expect(() => assertPublicHttps("https://example.com/prices?token=1")).toThrow(/query/);
   });
 
   it("derives sibling catalog URLs", () => {

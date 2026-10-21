@@ -6,6 +6,7 @@ import type { RawHit } from "./types.js";
 
 const EXTENSIONS = new Set([".py", ".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".yml", ".yaml", ".json", ".toml"]);
 const SKIP_DIRS = new Set([".git", "node_modules", "coverage", ".wrangler", ".astro"]);
+const SKIP_FILES = new Set([".env", ".npmrc", ".netrc", ".git-credentials", "id_rsa", "id_dsa", "id_ecdsa", "id_ed25519"]);
 const MAX_BYTES = 1_000_000;
 const WINDOW_LINES = 12;
 
@@ -20,13 +21,22 @@ interface Located {
   lineIndex: number;
 }
 
+export function resolveScanRoot(cwd: string, scanPath: string): string {
+  const root = path.resolve(cwd, scanPath);
+  const relative = path.relative(path.resolve(cwd), root);
+  if (relative.startsWith("..") || path.isAbsolute(relative)) {
+    throw new Error("Scan path must stay inside the workspace.");
+  }
+  return root;
+}
+
 export function scanRepo(options: {
   cwd: string;
   scanPath: string;
   ignore: string[];
   interesting: (value: string) => boolean;
 }): ScanResult {
-  const root = path.resolve(options.cwd, options.scanPath);
+  const root = resolveScanRoot(options.cwd, options.scanPath);
   const hits: RawHit[] = [];
   let filesScanned = 0;
 
@@ -38,7 +48,8 @@ export function scanRepo(options: {
       return;
     }
     for (const entry of entries) {
-      if (SKIP_DIRS.has(entry.name)) continue;
+      if (SKIP_DIRS.has(entry.name) || entry.isSymbolicLink()) continue;
+      if (SKIP_FILES.has(entry.name) || entry.name.startsWith(".env")) continue;
       const absolute = path.join(dir, entry.name);
       const relative = path.relative(options.cwd, absolute).split(path.sep).join("/");
       if (isIgnored(relative, options.ignore)) continue;

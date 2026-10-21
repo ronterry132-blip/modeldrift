@@ -1,6 +1,7 @@
 name = "modeldrift-prices"
 main = "src/index.ts"
 compatibility_date = "2026-10-21"
+send_metrics = false
 
 # Daily refresh. The Worker is not deployed by CI.
 [triggers]

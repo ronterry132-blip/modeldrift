@@ -1,7 +1,8 @@
+import os from "node:os";
 import { describe, expect, it } from "vitest";
 import { looksLikeModelId } from "../src/models.js";
 import { classifyKey, detectUnit, priceDrifted, toPerMillion } from "../src/prices.js";
-import { isIgnored, scanText } from "../src/scanner.js";
+import { isIgnored, resolveScanRoot, scanText } from "../src/scanner.js";
 
 const interesting = (value: string) => looksLikeModelId(value) || value === "gpt-4o" || value === "openai/gpt-4o";
 
@@ -74,6 +75,12 @@ describe("price helpers", () => {
     expect(priceDrifted(2.5, 2.5, 0.01)).toBe(false);
     expect(priceDrifted(2.52, 2.5, 0.01)).toBe(false);
     expect(priceDrifted(5, 2.5, 0.01)).toBe(true);
+  });
+});
+
+describe("scan root", () => {
+  it("rejects paths outside the workspace", () => {
+    expect(() => resolveScanRoot(os.tmpdir(), "/etc")).toThrow(/workspace/);
   });
 });
 

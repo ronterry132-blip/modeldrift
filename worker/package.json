@@ -4,12 +4,12 @@
   "type": "module",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "dev": "WRANGLER_SEND_METRICS=false wrangler dev",
+    "deploy": "WRANGLER_SEND_METRICS=false wrangler deploy"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20261019.1",
-    "typescript": "^5.8.3",
-    "wrangler": "^4.42.0"
+    "@cloudflare/workers-types": "5.20261021.1",
+    "typescript": "5.9.3",
+    "wrangler": "4.151.3"
   }
 }

@@ -1,22 +1,31 @@
 name: Refresh prices
 
+# Maintainer-only. This is the only workflow that pushes commits.
+# It never pushes main. It commits only the three generated catalog files,
+# on a data/price-refresh-YYYYMMDD branch.
+# PRICES_TOKEN, when set, should be a fine-grained token for this repository
+# with contents write and pull-requests write. Do not use a broad personal
+# access token. GITHUB_TOKEN can open the pull request but cannot start CI on it.
+
 on:
   schedule:
     - cron: "17 6 * * *"
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           token: ${{ secrets.PRICES_TOKEN || github.token }}
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 20
       - name: Pull LiteLLM prices
@@ -30,12 +39,21 @@ jobs:
             exit 0
           fi
           branch="data/price-refresh-$(date -u +%Y%m%d)"
+          case "$branch" in
+            data/price-refresh-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]) ;;
+            *) echo "Refusing to push an unexpected branch name." >&2; exit 1 ;;
+          esac
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$branch"
-          git add data/prices.json data/aliases.json data/deprecations.json
+          git add -- data/prices.json data/aliases.json data/deprecations.json
+          extra="$(git diff --cached --name-only | grep -v -E '^(data/prices.json|data/aliases.json|data/deprecations.json)$' || true)"
+          if [ -n "$extra" ]; then
+            echo "Refusing to commit files outside the catalog." >&2
+            exit 1
+          fi
           git commit -m "chore: refresh LiteLLM price catalog"
-          git push --force-with-lease origin "$branch"
+          git push --force-with-lease origin "HEAD:refs/heads/$branch"
           if gh pr list --head "$branch" --state open --json number --jq "length > 0" | grep -q true; then
             echo "Pull request already open for $branch."
             exit 0
