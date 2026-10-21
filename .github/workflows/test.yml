@@ -1,0 +1,43 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            action/package-lock.json
+            site/package-lock.json
+            worker/package-lock.json
+      - name: Unit tests
+        working-directory: action
+        run: npm ci && npm test && npm run typecheck
+      - name: Normalizer tests
+        run: node --test scripts/normalize-litellm.test.mjs
+      - name: Badge tests
+        run: node --test site/src/lib/badge.test.mjs
+      - name: Build the action and confirm dist is committed
+        working-directory: action
+        run: npm run build
+      - run: git diff --exit-code -- action/dist
+      - name: Typecheck the worker
+        working-directory: worker
+        run: npm ci && npm run typecheck
+      - name: Build the landing page
+        working-directory: site
+        env:
+          ASTRO_TELEMETRY_DISABLED: "1"
+        run: npm ci && npm run build

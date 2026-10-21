@@ -1,0 +1,13 @@
+name = "modeldrift-prices"
+main = "src/index.ts"
+compatibility_date = "2026-10-21"
+send_metrics = false
+
+# Daily refresh. The Worker is not deployed by CI.
+[triggers]
+crons = ["15 6 * * *"]
+
+# Replace id after `npx wrangler kv namespace create CATALOG`.
+[[kv_namespaces]]
+binding = "CATALOG"
+id = "00000000000000000000000000000000"

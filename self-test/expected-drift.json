@@ -1,0 +1,18 @@
+{
+  "require": [
+    {"kind": "price_changed", "model": "gpt-4o", "file": "examples/python/prices.py"},
+    {"kind": "price_changed", "model": "openai/gpt-4o", "file": "examples/python/prices.py"},
+    {"kind": "retired", "model": "gpt-4-0314", "file": "examples/python/prices.py"},
+    {"kind": "price_changed", "model": "gpt-4o-mini", "file": "examples/python/prices.py"},
+    {"kind": "unknown", "model": "gpt-drift-unknown", "file": "examples/yaml/models.yaml"},
+    {"kind": "price_changed", "model": "gpt-4-turbo", "file": "examples/json/prices.json"}
+  ],
+  "requireOneOf": [
+    {"model": "claude-sonnet-4-5", "file": "examples/typescript/prices.ts", "kinds": ["deprecated", "retired"]},
+    {"model": "gpt-4-turbo", "file": "examples/json/prices.json", "kinds": ["deprecated", "retired"]}
+  ],
+  "forbid": [
+    {"file": "examples/typescript/clean.ts"},
+    {"kind": "price_changed", "model": "gpt-4-0314", "file": "examples/python/prices.py"}
+  ]
+}

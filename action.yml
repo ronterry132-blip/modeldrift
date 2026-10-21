@@ -1,0 +1,88 @@
+# Least privilege for callers: contents: read, plus pull-requests: write
+# or issues: write only when posting a comment or issue. This action never
+# pushes commits. Do not run it from pull_request_target. See SECURITY.md.
+name: "ModelDrift"
+description: "Scan hard-coded LLM model names and token prices and report drift against a public catalog."
+author: "ronterry132-blip"
+branding:
+  icon: "trending-down"
+  color: "orange"
+inputs:
+  path:
+    description: "Directory to scan, relative to the repository root."
+    required: false
+    default: "."
+  prices-url:
+    description: "Optional public https catalog URL. Leave empty to use the shipped catalog and make no network call. No credentials or query string. Redirects are rechecked."
+    required: false
+    default: ""
+  aliases-url:
+    description: "HTTPS URL for aliases.json. Defaults to the sibling of prices-url."
+    required: false
+    default: ""
+  deprecations-url:
+    description: "HTTPS URL for deprecations.json. Defaults to the sibling of prices-url."
+    required: false
+    default: ""
+  prices-path:
+    description: "Local prices.json. When set, aliases.json and deprecations.json are read from the same directory unless overridden."
+    required: false
+    default: ""
+  aliases-path:
+    description: "Local aliases.json. Used with prices-path."
+    required: false
+    default: ""
+  deprecations-path:
+    description: "Local deprecations.json. Used with prices-path."
+    required: false
+    default: ""
+  tolerance:
+    description: "Relative price tolerance. 0.01 flags differences larger than 1%."
+    required: false
+    default: ""
+  fail-on-drift:
+    description: "Fail the job when drift is found."
+    required: false
+    default: "false"
+  comment:
+    description: "In auto mode, comment on pull requests."
+    required: false
+    default: "true"
+  mode:
+    description: "auto comments on pull_request and opens an issue on schedule. Also comment, issue, or report. pull_request_target is refused."
+    required: false
+    default: "auto"
+  github-token:
+    description: "Used only to post a comment or issue. Grant contents: read, plus pull-requests: write or issues: write. The action never pushes commits. Do not use pull_request_target."
+    required: false
+    default: ${{ github.token }}
+  ignore:
+    description: "Newline-separated ignore globs, relative to the repository root. Replaces the globs in .modeldrift.yml."
+    required: false
+    default: ""
+  use-config:
+    description: "Read .modeldrift.yml from the repository root."
+    required: false
+    default: "true"
+  allow-fallback:
+    description: "Use the shipped catalog when a prices URL cannot be fetched."
+    required: false
+    default: "true"
+  report-path:
+    description: "JSON report path inside the workspace or runner temp. Default is runner temp. The action does not commit or push this file."
+    required: false
+    default: ""
+  max-findings:
+    description: "Maximum findings included in the comment and report table."
+    required: false
+    default: "200"
+outputs:
+  drift-count:
+    description: "Number of drift findings."
+  has-drift:
+    description: "true when drift-count is greater than zero."
+  report-path:
+    description: "Path to the JSON report written by this run."
+runs:
+  using: "node20"
+  main: "action/dist/index.js"

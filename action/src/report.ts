@@ -1,0 +1,144 @@
+import type { DriftReport, Finding } from "./types.js";
+import type { Catalog } from "./catalog.js";
+
+export const REPORT_MARKER = "<!-- modeldrift-report -->";
+
+export const DISCLAIMER =
+  "Price data comes from third-party sources, including LiteLLM's model_prices_and_context_window.json (MIT, Copyright (c) 2023 Berri AI; files under enterprise/ are not used). It may be inaccurate or out of date. It is informational only, not financial, legal, or purchasing advice, and is provided as-is without warranty. Verify rates against the provider's pricing page before you rely on them.";
+
+export function buildReport(options: {
+  findings: Finding[];
+  scannedFiles: number;
+  catalog: Catalog;
+  maxFindings: number;
+}): DriftReport {
+  const truncated = options.findings.length > options.maxFindings;
+  const findings = options.findings.slice(0, options.maxFindings);
+  const report: DriftReport = {
+    driftCount: options.findings.length,
+    hasDrift: options.findings.length > 0,
+    truncated,
+    scannedFiles: options.scannedFiles,
+    generatedAt: new Date().toISOString(),
+    catalogGeneratedAt: options.catalog.prices.generatedAt ?? null,
+    source: options.catalog.prices.source ?? null,
+    sourceUrl: options.catalog.prices.sourceUrl ?? null,
+    license: options.catalog.prices.license ?? null,
+    findings,
+    markdown: "",
+  };
+  report.markdown = renderMarkdown(report);
+  return report;
+}
+
+export function renderMarkdown(report: DriftReport): string {
+  const lines: string[] = [
+    REPORT_MARKER,
+    "",
+    "## ModelDrift",
+    "",
+    "Possible drift, please verify. Findings are advisory and may be wrong. This check does not modify the repository.",
+    "",
+  ];
+  if (!report.hasDrift) {
+    lines.push(`No possible drift in ${report.scannedFiles} scanned files.`, "");
+  } else {
+    lines.push(
+      `Found **${report.driftCount}** possible drift finding${report.driftCount === 1 ? "" : "s"} in ${report.scannedFiles} scanned files.`,
+      "",
+      "| Status | Model | Location | Detail |",
+      "| --- | --- | --- | --- |",
+    );
+    for (const finding of report.findings) {
+      lines.push(
+        `| ${statusLabel(finding.kind)} | \`${escapeCell(finding.model)}\` | \`${escapeCell(finding.file)}:${finding.line}\` | ${escapeCell(detail(finding))} |`,
+      );
+    }
+    if (report.truncated) {
+      lines.push("", `Showing ${report.findings.length} of ${report.driftCount} findings.`);
+    }
+    lines.push("");
+  }
+  const generated = report.catalogGeneratedAt ? ` Catalog generated ${report.catalogGeneratedAt}.` : "";
+  const source = report.sourceUrl ? ` Source: ${report.sourceUrl}.` : "";
+  const license = report.license ? ` License: ${report.license}.` : "";
+  lines.push(`Prices are USD per 1M tokens.${generated}${source}${license}`, "", DISCLAIMER, "");
+  return lines.join("\n");
+}
+
+function statusLabel(kind: Finding["kind"]): string {
+  switch (kind) {
+    case "price_changed":
+      return "possible price change";
+    case "deprecated":
+      return "possibly deprecated";
+    case "retired":
+      return "possibly retired";
+    case "unknown":
+      return "unrecognized model";
+  }
+}
+
+function detail(finding: Finding): string {
+  if (finding.kind === "unknown") return "No matching catalog entry. Please verify the model id.";
+  if (finding.kind === "price_changed") {
+    const parts: string[] = [];
+    if (finding.inputFound != null && finding.inputExpected != null && finding.inputFound !== finding.inputExpected) {
+      parts.push(`input ${money(finding.inputFound)}/1M → ${money(finding.inputExpected)}/1M (${percent(finding.inputFound, finding.inputExpected)})`);
+    }
+    if (finding.outputFound != null && finding.outputExpected != null && finding.outputFound !== finding.outputExpected) {
+      parts.push(`output ${money(finding.outputFound)}/1M → ${money(finding.outputExpected)}/1M (${percent(finding.outputFound, finding.outputExpected)})`);
+    }
+    return parts.join("; ") || "Price does not match the catalog.";
+  }
+  const when = finding.sunset ? ` on ${finding.sunset}` : "";
+  const replacement = finding.replacement ? ` Replacement: \`${finding.replacement}\`.` : "";
+  const note = finding.note ? ` ${finding.note}` : "";
+  const verb = finding.kind === "retired" ? "Catalog marks this retired" : "Catalog marks this deprecated";
+  return `${verb}${when}.${replacement}${note} Please verify.`.trim();
+}
+
+function money(value: number): string {
+  const text = value.toFixed(6).replace(/\.?0+$/, "");
+  return `$${text}`;
+}
+
+function percent(found: number, expected: number): string {
+  if (expected === 0) return "n/a";
+  const value = ((found - expected) / expected) * 100;
+  const sign = value > 0 ? "+" : "";
+  return `${sign}${value.toFixed(1)}%`;
+}
+
+function escapeCell(value: string): string {
+  let out = "";
+  for (const char of value) {
+    switch (char) {
+      case "&":
+        out += "&amp;";
+        break;
+      case "<":
+        out += "&lt;";
+        break;
+      case ">":
+        out += "&gt;";
+        break;
+      case "`":
+        out += "'";
+        break;
+      case "\\":
+        out += "\\\\";
+        break;
+      case "|":
+        out += "\\|";
+        break;
+      case "\n":
+      case "\r":
+        out += " ";
+        break;
+      default:
+        out += char;
+    }
+  }
+  return out;
+}

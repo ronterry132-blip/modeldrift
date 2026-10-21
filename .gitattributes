@@ -1,0 +1,4 @@
+data/prices.json linguist-generated
+data/aliases.json linguist-generated
+data/deprecations.json linguist-generated
+action/dist/** linguist-generated
