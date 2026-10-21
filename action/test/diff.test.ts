@@ -72,6 +72,14 @@ describe("diff", () => {
     expect(report.markdown).toContain("Copyright (c) 2023 Berri AI");
     expect(report.markdown).toContain("`gpt-4o`");
     expect(report.markdown).not.toContain("<script>");
+    const hostile = buildReport({
+      findings: findingsFor("a|<script>\\b.py", '"gpt-4o": {"input": 999, "output": 999}\n'),
+      scannedFiles: 1,
+      catalog,
+      maxFindings: 20,
+    });
+    expect(hostile.markdown).toContain("`a\\|&lt;script&gt;\\\\b.py:");
+    expect(hostile.markdown).not.toContain("<script>");
     expect(report.hasDrift).toBe(true);
   });
 });

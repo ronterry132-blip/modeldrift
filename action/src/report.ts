@@ -111,11 +111,34 @@ function percent(found: number, expected: number): string {
 }
 
 function escapeCell(value: string): string {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/`/g, "'")
-    .replace(/\|/g, "\\|")
-    .replace(/\n/g, " ");
+  let out = "";
+  for (const char of value) {
+    switch (char) {
+      case "&":
+        out += "&amp;";
+        break;
+      case "<":
+        out += "&lt;";
+        break;
+      case ">":
+        out += "&gt;";
+        break;
+      case "`":
+        out += "'";
+        break;
+      case "\\":
+        out += "\\\\";
+        break;
+      case "|":
+        out += "\\|";
+        break;
+      case "\n":
+      case "\r":
+        out += " ";
+        break;
+      default:
+        out += char;
+    }
+  }
+  return out;
 }

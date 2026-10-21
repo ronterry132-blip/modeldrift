@@ -11,7 +11,8 @@ test("badge labels", () => {
 });
 
 test("badge text is escaped", () => {
-  const svg = badgeSvg("drift", '<script>');
-  assert.doesNotMatch(svg, /<script>/);
-  assert.match(svg, /&lt;script&gt; drift/);
+  const svg = badgeSvg("drift", "<script>");
+  assert.equal(svg.includes("<script>"), false);
+  assert.equal(svg.includes("<SCRIPT>"), false);
+  assert.equal(svg.includes("&lt;script&gt; drift"), true);
 });

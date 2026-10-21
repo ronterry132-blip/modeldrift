@@ -6,7 +6,7 @@ By participating you agree to the [Code of Conduct](CODE_OF_CONDUCT.md). Report 
 
 ## Development
 
-Node 20 or newer.
+Node 22 or newer. The published action still runs on GitHub's Node 20 runner; the bundle target stays `node20`. CI uses Node 22 because Astro 7 and Wrangler 4 require it.
 
 ```bash
 cd action
