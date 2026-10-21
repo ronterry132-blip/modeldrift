@@ -1,0 +1,4576 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-21T03:04:35.241Z",
+  "source": "litellm",
+  "license": "MIT",
+  "attribution": "Prices transformed from BerriAI/litellm model_prices_and_context_window.json (MIT, Copyright (c) 2023 Berri AI). USD per 1M tokens. enterprise/ is excluded.",
+  "modelCount": 761,
+  "models": {
+    "ai21.jamba-1-5-large-v1:0": {
+      "status": "deprecated",
+      "sunset": "2026-11-26",
+      "replacement": null,
+      "note": null
+    },
+    "ai21.jamba-1-5-mini-v1:0": {
+      "status": "deprecated",
+      "sunset": "2026-11-26",
+      "replacement": null,
+      "note": null
+    },
+    "anthropic.claude-opus-4-1-20250805-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-01-08",
+      "replacement": null,
+      "note": null
+    },
+    "anthropic.claude-sonnet-4-20250514-v1:0": {
+      "status": "retired",
+      "sunset": "2026-10-14",
+      "replacement": null,
+      "note": null
+    },
+    "anthropic.claude-sonnet-4-5-20250929-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-04-08",
+      "replacement": null,
+      "note": null
+    },
+    "apac.anthropic.claude-sonnet-4-20250514-v1:0": {
+      "status": "retired",
+      "sunset": "2026-10-14",
+      "replacement": null,
+      "note": null
+    },
+    "au.anthropic.claude-sonnet-4-5-20250929-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-04-08",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-fable-5": {
+      "status": "deprecated",
+      "sunset": "2027-12-05",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-fable-5-1": {
+      "status": "deprecated",
+      "sunset": "2027-12-05",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-haiku-4-5": {
+      "status": "deprecated",
+      "sunset": "2026-11-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-haiku-5-5": {
+      "status": "deprecated",
+      "sunset": "2027-09-29",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-opus-4-5": {
+      "status": "deprecated",
+      "sunset": "2026-11-24",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-opus-4-6": {
+      "status": "deprecated",
+      "sunset": "2027-02-02",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-opus-4-7": {
+      "status": "deprecated",
+      "sunset": "2027-04-06",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-opus-4-8": {
+      "status": "deprecated",
+      "sunset": "2027-09-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-opus-5": {
+      "status": "deprecated",
+      "sunset": "2027-07-08",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-opus-5-5": {
+      "status": "deprecated",
+      "sunset": "2027-09-18",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-opus-5-5-fast": {
+      "status": "deprecated",
+      "sunset": "2027-10-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-sonnet-4-5": {
+      "status": "deprecated",
+      "sunset": "2026-11-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-sonnet-4-6": {
+      "status": "deprecated",
+      "sunset": "2027-02-10",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-sonnet-5": {
+      "status": "deprecated",
+      "sunset": "2027-06-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/claude-sonnet-5-5": {
+      "status": "deprecated",
+      "sunset": "2027-09-29",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/codex-mini": {
+      "status": "deprecated",
+      "sunset": "2026-11-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/Cohere-command-a-plus-05-2026": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/Cohere-Embed-V5-Fast": {
+      "status": "deprecated",
+      "sunset": "2027-01-23",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/Cohere-Embed-V5-Pro": {
+      "status": "deprecated",
+      "sunset": "2027-01-23",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/cohere-rerank-v3-english": {
+      "status": "retired",
+      "sunset": "2025-06-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/cohere-rerank-v3-multilingual": {
+      "status": "retired",
+      "sunset": "2025-06-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/deepseek-r1": {
+      "status": "retired",
+      "sunset": "2026-08-13",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/deepseek-v3": {
+      "status": "retired",
+      "sunset": "2025-08-31",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/deepseek-v3-0324": {
+      "status": "retired",
+      "sunset": "2026-07-13",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/deepseek-v3.1": {
+      "status": "retired",
+      "sunset": "2026-07-13",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/deepseek-v4-flash": {
+      "status": "deprecated",
+      "sunset": "2028-02-20",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/DeepSeek-V4-Flash-0731": {
+      "status": "deprecated",
+      "sunset": "2026-12-03",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/deepseek-v4-pro": {
+      "status": "deprecated",
+      "sunset": "2028-02-20",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/deepseek-v4.1-flash": {
+      "status": "deprecated",
+      "sunset": "2026-12-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/FW-DeepSeek-V3.2": {
+      "status": "deprecated",
+      "sunset": "2027-07-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/FW-GLM-5": {
+      "status": "deprecated",
+      "sunset": "2027-07-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/FW-GLM-5.1": {
+      "status": "deprecated",
+      "sunset": "2027-07-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/FW-GPT-OSS-120B": {
+      "status": "deprecated",
+      "sunset": "2027-07-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/FW-Kimi-K2.5": {
+      "status": "deprecated",
+      "sunset": "2027-07-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/FW-MiniMax-M2.5": {
+      "status": "deprecated",
+      "sunset": "2027-07-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/gpt-5.4": {
+      "status": "deprecated",
+      "sunset": "2027-09-02",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/gpt-5.4-2026-03-05": {
+      "status": "deprecated",
+      "sunset": "2027-09-02",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/gpt-5.4-mini": {
+      "status": "deprecated",
+      "sunset": "2027-09-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/gpt-5.4-mini-2026-03-17": {
+      "status": "deprecated",
+      "sunset": "2027-09-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/gpt-5.4-nano": {
+      "status": "deprecated",
+      "sunset": "2027-09-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/gpt-5.4-nano-2026-03-17": {
+      "status": "deprecated",
+      "sunset": "2027-09-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/gpt-5.4-pro": {
+      "status": "deprecated",
+      "sunset": "2027-09-07",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/gpt-5.4-pro-2026-03-05": {
+      "status": "deprecated",
+      "sunset": "2027-09-07",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/gpt-5.5": {
+      "status": "deprecated",
+      "sunset": "2027-10-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/gpt-5.5-2026-04-24": {
+      "status": "deprecated",
+      "sunset": "2027-10-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/gpt-chat-latest": {
+      "status": "deprecated",
+      "sunset": "2027-05-18",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/gpt-image-2": {
+      "status": "deprecated",
+      "sunset": "2027-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/grok-3": {
+      "status": "retired",
+      "sunset": "2026-05-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/grok-3-mini": {
+      "status": "retired",
+      "sunset": "2026-05-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/grok-4-20-non-reasoning": {
+      "status": "deprecated",
+      "sunset": "2027-04-06",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/grok-4-20-reasoning": {
+      "status": "deprecated",
+      "sunset": "2027-04-06",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/grok-4-fast-non-reasoning": {
+      "status": "retired",
+      "sunset": "2026-05-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/grok-4-fast-reasoning": {
+      "status": "retired",
+      "sunset": "2026-05-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/grok-4.7": {
+      "status": "deprecated",
+      "sunset": "2027-10-05",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/jais-30b-chat": {
+      "status": "retired",
+      "sunset": "2026-01-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/jamba-instruct": {
+      "status": "retired",
+      "sunset": "2025-03-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/kimi-k2-thinking": {
+      "status": "retired",
+      "sunset": "2026-03-29",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/kimi-k2.5": {
+      "status": "deprecated",
+      "sunset": "2027-01-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/kimi-k2.6": {
+      "status": "deprecated",
+      "sunset": "2027-04-16",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/kimi-k2.7-code": {
+      "status": "deprecated",
+      "sunset": "2027-04-16",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/MAI-DS-R1": {
+      "status": "retired",
+      "sunset": "2026-02-27",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/MAI-Image-2.5": {
+      "status": "retired",
+      "sunset": "2026-10-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/MAI-Image-2.5-Flash": {
+      "status": "retired",
+      "sunset": "2026-10-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/MAI-Image-2.5-Pro": {
+      "status": "retired",
+      "sunset": "2026-10-01",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/Meta-Llama-3-70B-Instruct": {
+      "status": "retired",
+      "sunset": "2025-06-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/Meta-Llama-3.1-70B-Instruct": {
+      "status": "retired",
+      "sunset": "2025-06-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/ministral-3b": {
+      "status": "deprecated",
+      "sunset": "2026-12-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/mistral-large": {
+      "status": "retired",
+      "sunset": "2025-04-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/mistral-large-2407": {
+      "status": "retired",
+      "sunset": "2025-05-13",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/mistral-medium-2505": {
+      "status": "deprecated",
+      "sunset": "2026-12-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/mistral-nemo": {
+      "status": "retired",
+      "sunset": "2026-01-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/mistral-small": {
+      "status": "retired",
+      "sunset": "2025-07-31",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/mistral-small-2503": {
+      "status": "deprecated",
+      "sunset": "2026-12-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/model_router": {
+      "status": "deprecated",
+      "sunset": "2027-05-20",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/model-router": {
+      "status": "deprecated",
+      "sunset": "2027-05-20",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/Phi-3-medium-128k-instruct": {
+      "status": "retired",
+      "sunset": "2025-08-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/Phi-3-medium-4k-instruct": {
+      "status": "retired",
+      "sunset": "2025-08-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/Phi-3-mini-128k-instruct": {
+      "status": "retired",
+      "sunset": "2025-08-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/Phi-3-mini-4k-instruct": {
+      "status": "retired",
+      "sunset": "2025-08-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/Phi-3-small-128k-instruct": {
+      "status": "retired",
+      "sunset": "2025-08-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/Phi-3-small-8k-instruct": {
+      "status": "retired",
+      "sunset": "2025-08-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/Phi-3.5-mini-instruct": {
+      "status": "retired",
+      "sunset": "2025-08-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/Phi-3.5-MoE-instruct": {
+      "status": "retired",
+      "sunset": "2025-08-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure_ai/Phi-3.5-vision-instruct": {
+      "status": "retired",
+      "sunset": "2025-08-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure/ada": {
+      "status": "deprecated",
+      "sunset": "2028-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/apac/gpt-6.1-sol": {
+      "status": "deprecated",
+      "sunset": "2028-03-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/chat-latest": {
+      "status": "deprecated",
+      "sunset": "2026-12-02",
+      "replacement": null,
+      "note": null
+    },
+    "azure/codex-mini": {
+      "status": "deprecated",
+      "sunset": "2026-11-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/command-r-plus": {
+      "status": "retired",
+      "sunset": "2025-06-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/codex-mini": {
+      "status": "deprecated",
+      "sunset": "2026-11-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-4.1": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-4.1-mini": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-4.1-nano": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-4o": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-4o-2024-05-13": {
+      "status": "deprecated",
+      "sunset": "2026-12-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-4o-2024-08-06": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-4o-2024-11-20": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-4o-mini": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-4o-mini-2024-07-18": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-4o-realtime-preview-2024-10-01": {
+      "status": "retired",
+      "sunset": "2025-03-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5-2025-08-07": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5-codex": {
+      "status": "deprecated",
+      "sunset": "2027-03-17",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5-mini": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5-mini-2025-08-07": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5-nano": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5-nano-2025-08-07": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5-pro": {
+      "status": "deprecated",
+      "sunset": "2027-04-07",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.1": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.1-chat": {
+      "status": "retired",
+      "sunset": "2026-06-29",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.1-codex": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.1-codex-max": {
+      "status": "deprecated",
+      "sunset": "2027-05-18",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.1-codex-mini": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.2": {
+      "status": "deprecated",
+      "sunset": "2027-06-08",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.2-chat": {
+      "status": "retired",
+      "sunset": "2026-06-29",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.2-codex": {
+      "status": "deprecated",
+      "sunset": "2027-07-13",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.3-chat": {
+      "status": "retired",
+      "sunset": "2026-06-29",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.3-codex": {
+      "status": "deprecated",
+      "sunset": "2027-08-24",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.4": {
+      "status": "deprecated",
+      "sunset": "2027-09-02",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.4-2026-03-05": {
+      "status": "deprecated",
+      "sunset": "2027-09-02",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.4-mini": {
+      "status": "deprecated",
+      "sunset": "2027-09-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.4-nano": {
+      "status": "deprecated",
+      "sunset": "2027-09-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.4-pro": {
+      "status": "deprecated",
+      "sunset": "2027-09-07",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.5": {
+      "status": "deprecated",
+      "sunset": "2027-10-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.5-2026-04-23": {
+      "status": "deprecated",
+      "sunset": "2027-10-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.5-2026-04-24": {
+      "status": "deprecated",
+      "sunset": "2027-10-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.6-luna": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.6-sol": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-5.6-terra": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-6-astra": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-6-luna": {
+      "status": "deprecated",
+      "sunset": "2028-03-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-6-sol": {
+      "status": "deprecated",
+      "sunset": "2028-03-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/gpt-6.1-sol": {
+      "status": "deprecated",
+      "sunset": "2028-03-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/o1": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/o1-2024-12-17": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/o1-preview": {
+      "status": "retired",
+      "sunset": "2025-07-28",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/o3": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/o3-2025-04-16": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/o3-deep-research": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/o3-mini": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/o3-mini-2025-01-31": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/o4-mini": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/o4-mini-2025-04-16": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/text-embedding-3-large": {
+      "status": "deprecated",
+      "sunset": "2028-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/text-embedding-3-small": {
+      "status": "deprecated",
+      "sunset": "2028-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/eu/text-embedding-ada-002": {
+      "status": "deprecated",
+      "sunset": "2028-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/global-standard/gpt-4o-2024-08-06": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/global-standard/gpt-4o-2024-11-20": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/global-standard/gpt-4o-mini": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/global/gpt-4o-2024-08-06": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/global/gpt-4o-2024-11-20": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/global/gpt-5.1": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/global/gpt-5.1-codex": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/global/gpt-5.1-codex-mini": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-35-turbo-16k": {
+      "status": "retired",
+      "sunset": "2025-04-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-35-turbo-16k-0613": {
+      "status": "retired",
+      "sunset": "2025-04-30",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4": {
+      "status": "retired",
+      "sunset": "2025-06-06",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4-0613": {
+      "status": "retired",
+      "sunset": "2025-06-06",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4-32k": {
+      "status": "retired",
+      "sunset": "2025-06-06",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4-32k-0613": {
+      "status": "retired",
+      "sunset": "2025-06-06",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4.1": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4.1-2025-04-14": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4.1-mini": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4.1-mini-2025-04-14": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4.1-nano": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4.1-nano-2025-04-14": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4.5-preview": {
+      "status": "retired",
+      "sunset": "2025-07-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4o": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4o-2024-05-13": {
+      "status": "deprecated",
+      "sunset": "2026-12-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4o-2024-08-06": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4o-2024-11-20": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4o-mini": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4o-mini-2024-07-18": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4o-mini-transcribe": {
+      "status": "deprecated",
+      "sunset": "2027-06-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4o-mini-tts": {
+      "status": "deprecated",
+      "sunset": "2027-06-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4o-realtime-preview-2024-10-01": {
+      "status": "retired",
+      "sunset": "2025-03-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4o-transcribe": {
+      "status": "retired",
+      "sunset": "2026-10-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-4o-transcribe-diarize": {
+      "status": "deprecated",
+      "sunset": "2027-04-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5-2025-08-07": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5-chat": {
+      "status": "retired",
+      "sunset": "2026-06-29",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5-codex": {
+      "status": "deprecated",
+      "sunset": "2027-03-17",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5-mini": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5-mini-2025-08-07": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5-nano": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5-nano-2025-08-07": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5-pro": {
+      "status": "deprecated",
+      "sunset": "2027-04-07",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.1": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.1-2025-11-13": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.1-chat": {
+      "status": "retired",
+      "sunset": "2026-06-29",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.1-codex": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.1-codex-2025-11-13": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.1-codex-max": {
+      "status": "deprecated",
+      "sunset": "2027-05-18",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.1-codex-mini": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.1-codex-mini-2025-11-13": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.2": {
+      "status": "deprecated",
+      "sunset": "2027-06-08",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.2-2025-12-11": {
+      "status": "deprecated",
+      "sunset": "2027-06-08",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.2-chat": {
+      "status": "retired",
+      "sunset": "2026-06-29",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.2-codex": {
+      "status": "deprecated",
+      "sunset": "2027-07-13",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.3-chat": {
+      "status": "retired",
+      "sunset": "2026-06-29",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.3-codex": {
+      "status": "deprecated",
+      "sunset": "2027-08-24",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.4": {
+      "status": "deprecated",
+      "sunset": "2027-09-02",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.4-2026-03-05": {
+      "status": "deprecated",
+      "sunset": "2027-09-02",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.4-mini": {
+      "status": "deprecated",
+      "sunset": "2027-09-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.4-mini-2026-03-17": {
+      "status": "deprecated",
+      "sunset": "2027-09-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.4-nano": {
+      "status": "deprecated",
+      "sunset": "2027-09-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.4-nano-2026-03-17": {
+      "status": "deprecated",
+      "sunset": "2027-09-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.4-pro": {
+      "status": "deprecated",
+      "sunset": "2027-09-07",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.4-pro-2026-03-05": {
+      "status": "deprecated",
+      "sunset": "2027-09-07",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.5": {
+      "status": "deprecated",
+      "sunset": "2027-10-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.5-2026-04-23": {
+      "status": "deprecated",
+      "sunset": "2027-10-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.5-2026-04-24": {
+      "status": "deprecated",
+      "sunset": "2027-10-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.6-luna": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.6-luna-2026-07-09": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.6-sol": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.6-sol-2026-07-09": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.6-terra": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-5.6-terra-2026-07-09": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-6-astra": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-6-astra-2026-09-03": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-6-luna": {
+      "status": "deprecated",
+      "sunset": "2028-03-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-6-luna-2026-09-22": {
+      "status": "deprecated",
+      "sunset": "2028-03-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-6-sol": {
+      "status": "deprecated",
+      "sunset": "2028-03-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-6-sol-2026-09-22": {
+      "status": "deprecated",
+      "sunset": "2028-03-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-6.1-sol": {
+      "status": "deprecated",
+      "sunset": "2028-03-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-6.1-sol-2026-09-29": {
+      "status": "deprecated",
+      "sunset": "2028-03-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-audio": {
+      "status": "deprecated",
+      "sunset": "2027-03-02",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-audio-1.5": {
+      "status": "deprecated",
+      "sunset": "2027-08-24",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-audio-1.5-2026-02-23": {
+      "status": "deprecated",
+      "sunset": "2027-08-24",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-audio-2025-08-28": {
+      "status": "deprecated",
+      "sunset": "2027-03-02",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-audio-mini": {
+      "status": "deprecated",
+      "sunset": "2027-06-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-audio-mini-2025-10-06": {
+      "status": "deprecated",
+      "sunset": "2027-04-06",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-chat-latest": {
+      "status": "deprecated",
+      "sunset": "2027-05-18",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-image-1": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-image-1-mini": {
+      "status": "deprecated",
+      "sunset": "2027-04-07",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-image-1.5": {
+      "status": "deprecated",
+      "sunset": "2026-12-16",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-image-1.5-2025-12-16": {
+      "status": "deprecated",
+      "sunset": "2026-12-16",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-image-2": {
+      "status": "deprecated",
+      "sunset": "2027-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-image-2-2026-04-21": {
+      "status": "deprecated",
+      "sunset": "2027-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-image-2.5-flare": {
+      "status": "deprecated",
+      "sunset": "2027-09-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-image-2.5-sunburst": {
+      "status": "deprecated",
+      "sunset": "2027-09-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-realtime": {
+      "status": "deprecated",
+      "sunset": "2027-03-02",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-realtime-1.5": {
+      "status": "deprecated",
+      "sunset": "2027-08-24",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-realtime-1.5-2026-02-23": {
+      "status": "deprecated",
+      "sunset": "2027-08-24",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-realtime-2": {
+      "status": "deprecated",
+      "sunset": "2026-10-31",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-realtime-2.1": {
+      "status": "deprecated",
+      "sunset": "2027-06-25",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-realtime-2.1-mini": {
+      "status": "deprecated",
+      "sunset": "2027-06-25",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-realtime-2025-08-28": {
+      "status": "deprecated",
+      "sunset": "2027-03-02",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-realtime-mini": {
+      "status": "deprecated",
+      "sunset": "2027-06-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/gpt-realtime-mini-2025-10-06": {
+      "status": "deprecated",
+      "sunset": "2027-04-06",
+      "replacement": null,
+      "note": null
+    },
+    "azure/model-router": {
+      "status": "deprecated",
+      "sunset": "2027-05-20",
+      "replacement": null,
+      "note": null
+    },
+    "azure/o1": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/o1-2024-12-17": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/o3": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/o3-2025-04-16": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/o3-deep-research": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/o3-mini": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/o3-mini-2025-01-31": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/o3-pro": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/o3-pro-2025-06-10": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/o4-mini": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/o4-mini-2025-04-16": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/text-embedding-3-large": {
+      "status": "deprecated",
+      "sunset": "2028-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/text-embedding-3-small": {
+      "status": "deprecated",
+      "sunset": "2028-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/text-embedding-ada-002": {
+      "status": "deprecated",
+      "sunset": "2028-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/codex-mini": {
+      "status": "deprecated",
+      "sunset": "2026-11-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-4.1": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-4.1-2025-04-14": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-4.1-mini": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-4.1-mini-2025-04-14": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-4.1-nano": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-4.1-nano-2025-04-14": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-4o": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-4o-2024-05-13": {
+      "status": "deprecated",
+      "sunset": "2026-12-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-4o-2024-08-06": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-4o-2024-11-20": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-4o-mini": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-4o-mini-2024-07-18": {
+      "status": "deprecated",
+      "sunset": "2027-04-14",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-4o-realtime-preview-2024-10-01": {
+      "status": "retired",
+      "sunset": "2025-03-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5-2025-08-07": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5-codex": {
+      "status": "deprecated",
+      "sunset": "2027-03-17",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5-mini": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5-mini-2025-08-07": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5-nano": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5-nano-2025-08-07": {
+      "status": "deprecated",
+      "sunset": "2027-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5-pro": {
+      "status": "deprecated",
+      "sunset": "2027-04-07",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.1": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.1-chat": {
+      "status": "retired",
+      "sunset": "2026-06-29",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.1-codex": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.1-codex-max": {
+      "status": "deprecated",
+      "sunset": "2027-05-18",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.1-codex-mini": {
+      "status": "deprecated",
+      "sunset": "2027-05-15",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.2": {
+      "status": "deprecated",
+      "sunset": "2027-06-08",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.2-chat": {
+      "status": "retired",
+      "sunset": "2026-06-29",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.2-codex": {
+      "status": "deprecated",
+      "sunset": "2027-07-13",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.3-chat": {
+      "status": "retired",
+      "sunset": "2026-06-29",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.3-codex": {
+      "status": "deprecated",
+      "sunset": "2027-08-24",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.4": {
+      "status": "deprecated",
+      "sunset": "2027-09-02",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.4-2026-03-05": {
+      "status": "deprecated",
+      "sunset": "2027-09-02",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.4-mini": {
+      "status": "deprecated",
+      "sunset": "2027-09-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.4-nano": {
+      "status": "deprecated",
+      "sunset": "2027-09-21",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.4-pro": {
+      "status": "deprecated",
+      "sunset": "2027-09-07",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.5": {
+      "status": "deprecated",
+      "sunset": "2027-10-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.5-2026-04-23": {
+      "status": "deprecated",
+      "sunset": "2027-10-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.5-2026-04-24": {
+      "status": "deprecated",
+      "sunset": "2027-10-26",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.6-luna": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.6-sol": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-5.6-terra": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-6-astra": {
+      "status": "deprecated",
+      "sunset": "2028-01-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-6-luna": {
+      "status": "deprecated",
+      "sunset": "2028-03-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-6-sol": {
+      "status": "deprecated",
+      "sunset": "2028-03-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-6.1-sol": {
+      "status": "deprecated",
+      "sunset": "2028-03-11",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/gpt-chat-latest": {
+      "status": "deprecated",
+      "sunset": "2027-05-18",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/o1": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/o1-2024-12-17": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/o1-preview": {
+      "status": "retired",
+      "sunset": "2025-07-28",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/o3": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/o3-2025-04-16": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/o3-deep-research": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/o3-mini": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/o3-mini-2025-01-31": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/o4-mini": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/o4-mini-2025-04-16": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/text-embedding-3-large": {
+      "status": "deprecated",
+      "sunset": "2028-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/text-embedding-3-small": {
+      "status": "deprecated",
+      "sunset": "2028-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "azure/us/text-embedding-ada-002": {
+      "status": "deprecated",
+      "sunset": "2028-02-09",
+      "replacement": null,
+      "note": null
+    },
+    "babbage-002": {
+      "status": "retired",
+      "sunset": "2026-09-28",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/deepseek-ai/DeepSeek-V3-0324": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/deepseek-ai/DeepSeek-V3.1": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/deepseek-ai/DeepSeek-V4-Pro": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/MiniMaxAI/MiniMax-M2.5": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/moonshotai/Kimi-K2-Instruct-0905": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/moonshotai/Kimi-K2-Thinking": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/moonshotai/Kimi-K2.5": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/moonshotai/Kimi-K2.6": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/moonshotai/Kimi-K2.7-Code": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/nvidia/Nemotron-120B-A12B": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/thinkingmachines/inkling": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/thinkingmachines/inkling-small": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/zai-org/GLM-4.6": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/zai-org/GLM-4.7": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "baseten/zai-org/GLM-5": {
+      "status": "retired",
+      "sunset": "2026-10-16",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock_mantle/deepseek.v3.1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock_mantle/moonshotai.kimi-k2-thinking": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock_mantle/qwen.qwen3-coder-30b-a3b-instruct": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock_mantle/qwen.qwen3-coder-480b-a35b-instruct": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/ap-northeast-1/minimax.minimax-m2.1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/ap-northeast-1/moonshotai.kimi-k2-thinking": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/ap-south-1/meta.llama3-70b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/ap-south-1/meta.llama3-8b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/ap-south-1/minimax.minimax-m2.1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/ap-south-1/moonshotai.kimi-k2-thinking": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/ap-southeast-3/minimax.minimax-m2.1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/ca-central-1/meta.llama3-70b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/ca-central-1/meta.llama3-8b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/eu-central-1/minimax.minimax-m2.1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/eu-north-1/minimax.minimax-m2.1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/eu-south-1/minimax.minimax-m2.1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/eu-west-1/meta.llama3-70b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/eu-west-1/meta.llama3-8b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/eu-west-1/minimax.minimax-m2.1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/eu-west-2/meta.llama3-70b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/eu-west-2/meta.llama3-8b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/eu-west-2/minimax.minimax-m2.1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/eu-west-3/mistral.mistral-7b-instruct-v0:2": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/eu-west-3/mistral.mixtral-8x7b-instruct-v0:1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/moonshotai.kimi-k2-thinking": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/sa-east-1/meta.llama3-70b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/sa-east-1/meta.llama3-8b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/sa-east-1/minimax.minimax-m2.1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/sa-east-1/moonshotai.kimi-k2-thinking": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-east-1/meta.llama3-70b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-east-1/meta.llama3-8b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-east-1/minimax.minimax-m2.1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-east-1/mistral.mistral-7b-instruct-v0:2": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-east-1/mistral.mixtral-8x7b-instruct-v0:1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-east-1/moonshotai.kimi-k2-thinking": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-east-2/minimax.minimax-m2.1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-east-2/moonshotai.kimi-k2-thinking": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-gov-east-1/nvidia.nemotron-nano-12b-v2": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-gov-east-1/nvidia.nemotron-nano-9b-v2": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-gov-west-1/nvidia.nemotron-nano-12b-v2": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-gov-west-1/nvidia.nemotron-nano-9b-v2": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-west-1/meta.llama3-70b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-west-1/meta.llama3-8b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-west-2/minimax.minimax-m2.1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-west-2/mistral.mistral-7b-instruct-v0:2": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-west-2/mistral.mixtral-8x7b-instruct-v0:1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "bedrock/us-west-2/moonshotai.kimi-k2-thinking": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "chatgpt-image-latest": {
+      "status": "deprecated",
+      "sunset": "2026-12-01",
+      "replacement": null,
+      "note": null
+    },
+    "claude-mythos-preview": {
+      "status": "retired",
+      "sunset": "2026-06-09",
+      "replacement": null,
+      "note": null
+    },
+    "claude-sonnet-4-5": {
+      "status": "deprecated",
+      "sunset": "2026-11-30",
+      "replacement": null,
+      "note": null
+    },
+    "claude-sonnet-4-5-20250929": {
+      "status": "deprecated",
+      "sunset": "2026-11-30",
+      "replacement": null,
+      "note": null
+    },
+    "computer-use-preview": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "computer-use-preview-2025-03-11": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "databricks/databricks-claude-sonnet-4": {
+      "status": "retired",
+      "sunset": "2026-10-09",
+      "replacement": null,
+      "note": null
+    },
+    "databricks/databricks-gemini-2-5-flash": {
+      "status": "retired",
+      "sunset": "2026-10-02",
+      "replacement": null,
+      "note": null
+    },
+    "databricks/databricks-gemini-2-5-pro": {
+      "status": "retired",
+      "sunset": "2026-10-02",
+      "replacement": null,
+      "note": null
+    },
+    "davinci-002": {
+      "status": "retired",
+      "sunset": "2026-09-28",
+      "replacement": null,
+      "note": null
+    },
+    "deepseek-chat": {
+      "status": "retired",
+      "sunset": "2026-07-24",
+      "replacement": null,
+      "note": null
+    },
+    "deepseek-reasoner": {
+      "status": "retired",
+      "sunset": "2026-07-24",
+      "replacement": null,
+      "note": null
+    },
+    "deepseek.r1-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "deepseek.v3-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "deepseek/deepseek-chat": {
+      "status": "retired",
+      "sunset": "2026-07-24",
+      "replacement": null,
+      "note": null
+    },
+    "deepseek/deepseek-reasoner": {
+      "status": "retired",
+      "sunset": "2026-07-24",
+      "replacement": null,
+      "note": null
+    },
+    "eu.anthropic.claude-haiku-4-5-20251001-v1:0": {
+      "status": "retired",
+      "sunset": "2026-10-15",
+      "replacement": null,
+      "note": null
+    },
+    "eu.anthropic.claude-opus-4-1-20250805-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-01-08",
+      "replacement": null,
+      "note": null
+    },
+    "eu.anthropic.claude-sonnet-4-20250514-v1:0": {
+      "status": "retired",
+      "sunset": "2026-10-14",
+      "replacement": null,
+      "note": null
+    },
+    "eu.anthropic.claude-sonnet-4-5-20250929-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-04-08",
+      "replacement": null,
+      "note": null
+    },
+    "eu.meta.llama3-2-1b-instruct-v1:0": {
+      "status": "retired",
+      "sunset": "2026-07-07",
+      "replacement": null,
+      "note": null
+    },
+    "eu.meta.llama3-2-3b-instruct-v1:0": {
+      "status": "retired",
+      "sunset": "2026-07-07",
+      "replacement": null,
+      "note": null
+    },
+    "eu.twelvelabs.marengo-embed-2-7-v1:0": {
+      "status": "deprecated",
+      "sunset": "2026-11-30",
+      "replacement": null,
+      "note": null
+    },
+    "eu.twelvelabs.pegasus-1-2-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-22",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/models/deepseek-v4-flash-0731": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/models/deepseek-v4-flash-vision-exp": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/models/deepseek-v4-pro": {
+      "status": "retired",
+      "sunset": "2026-08-27",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/models/deepseek-v4-pro-0813": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/models/glm-5p2": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/models/gpt-oss-120b": {
+      "status": "deprecated",
+      "sunset": "2026-11-07",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/models/inkling": {
+      "status": "deprecated",
+      "sunset": "2026-11-07",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/models/kimi-k2p6": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/models/kimi-k2p7-code": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/models/muse-glimmer-30b": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/models/nemotron-3-ultra-nvfp4": {
+      "status": "deprecated",
+      "sunset": "2026-11-07",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/models/nemotron-lightning-3p5-30b-a3b": {
+      "status": "deprecated",
+      "sunset": "2026-11-07",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/routers/glm-5p2-fast": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/routers/glm-5p2-fast-us": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/routers/glm-5p3-flash-us": {
+      "status": "deprecated",
+      "sunset": "2026-11-07",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/routers/kimi-k2p6-fast": {
+      "status": "retired",
+      "sunset": "2026-08-27",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/accounts/fireworks/routers/kimi-k2p7-code-fast": {
+      "status": "retired",
+      "sunset": "2026-08-27",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/deepseek-v4-flash-0731": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/deepseek-v4-flash-vision-exp": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/deepseek-v4-pro-0813": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/glm-5p2": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/glm-5p2-fast": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/glm-5p2-fast-us": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/glm-5p3-flash-us": {
+      "status": "deprecated",
+      "sunset": "2026-11-07",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/gpt-oss-120b": {
+      "status": "deprecated",
+      "sunset": "2026-11-07",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/kimi-k2p6": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/kimi-k2p6-fast": {
+      "status": "retired",
+      "sunset": "2026-08-27",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/kimi-k2p7-code": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/kimi-k2p7-code-fast": {
+      "status": "retired",
+      "sunset": "2026-08-27",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/muse-glimmer-30b": {
+      "status": "retired",
+      "sunset": "2026-09-25",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/nemotron-3-ultra-nvfp4": {
+      "status": "deprecated",
+      "sunset": "2026-11-07",
+      "replacement": null,
+      "note": null
+    },
+    "fireworks_ai/nemotron-lightning-3p5-30b-a3b": {
+      "status": "deprecated",
+      "sunset": "2026-11-07",
+      "replacement": null,
+      "note": null
+    },
+    "ft:babbage-002": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "ft:davinci-002": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "ft:gpt-3.5-turbo": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "ft:gpt-3.5-turbo-0125": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "ft:gpt-3.5-turbo-0613": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "ft:gpt-3.5-turbo-1106": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "ft:gpt-4-0613": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "ft:gpt-4.1-2025-04-14": {
+      "status": "deprecated",
+      "sunset": "2027-01-14",
+      "replacement": null,
+      "note": null
+    },
+    "ft:gpt-4.1-mini-2025-04-14": {
+      "status": "deprecated",
+      "sunset": "2027-01-14",
+      "replacement": null,
+      "note": null
+    },
+    "ft:gpt-4.1-nano-2025-04-14": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "ft:gpt-4o-2024-08-06": {
+      "status": "deprecated",
+      "sunset": "2027-01-14",
+      "replacement": null,
+      "note": null
+    },
+    "ft:gpt-4o-2024-11-20": {
+      "status": "deprecated",
+      "sunset": "2027-01-14",
+      "replacement": null,
+      "note": null
+    },
+    "ft:gpt-4o-mini-2024-07-18": {
+      "status": "deprecated",
+      "sunset": "2027-01-14",
+      "replacement": null,
+      "note": null
+    },
+    "ft:o4-mini-2025-04-16": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-2.0-flash-exp-image-generation": {
+      "status": "retired",
+      "sunset": "2025-11-14",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-2.5-flash": {
+      "status": "retired",
+      "sunset": "2026-10-20",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-2.5-flash-image": {
+      "status": "deprecated",
+      "sunset": "2027-03-15",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-2.5-flash-lite": {
+      "status": "retired",
+      "sunset": "2026-10-20",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-2.5-flash-native-audio-preview-12-2025": {
+      "status": "deprecated",
+      "sunset": "2026-11-17",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-2.5-flash-preview-tts": {
+      "status": "deprecated",
+      "sunset": "2026-11-17",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-2.5-pro": {
+      "status": "retired",
+      "sunset": "2026-10-20",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-3-pro-image": {
+      "status": "deprecated",
+      "sunset": "2027-05-28",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-3.1-flash-image": {
+      "status": "deprecated",
+      "sunset": "2027-05-28",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-3.1-flash-lite": {
+      "status": "deprecated",
+      "sunset": "2027-05-07",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-3.1-flash-lite-image": {
+      "status": "deprecated",
+      "sunset": "2027-06-28",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-3.1-flash-live-preview": {
+      "status": "deprecated",
+      "sunset": "2026-11-17",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-3.5-flash": {
+      "status": "deprecated",
+      "sunset": "2027-05-19",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-3.5-flash-lite": {
+      "status": "deprecated",
+      "sunset": "2027-07-21",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-3.6-flash": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-3.7-flash": {
+      "status": "deprecated",
+      "sunset": "2027-01-28",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-embedding-001": {
+      "status": "deprecated",
+      "sunset": "2028-05-20",
+      "replacement": null,
+      "note": null
+    },
+    "gemini-live-2.5-flash-native-audio": {
+      "status": "deprecated",
+      "sunset": "2026-12-13",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/deep-research-pro-preview-12-2025": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/gemini-2.0-flash-exp-image-generation": {
+      "status": "retired",
+      "sunset": "2025-11-14",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/gemini-2.5-computer-use-preview-10-2025": {
+      "status": "retired",
+      "sunset": "2026-07-28",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/gemini-2.5-flash-image": {
+      "status": "deprecated",
+      "sunset": "2027-03-15",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/gemini-2.5-flash-native-audio-preview-12-2025": {
+      "status": "deprecated",
+      "sunset": "2026-11-17",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/gemini-2.5-flash-preview-tts": {
+      "status": "deprecated",
+      "sunset": "2026-11-17",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/gemini-2.5-pro-preview-tts": {
+      "status": "deprecated",
+      "sunset": "2026-11-17",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/gemini-3-pro-image-preview": {
+      "status": "retired",
+      "sunset": "2026-06-25",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/gemini-3.1-flash-image-preview": {
+      "status": "retired",
+      "sunset": "2026-06-25",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/gemini-3.1-flash-lite": {
+      "status": "deprecated",
+      "sunset": "2027-05-07",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/gemini-3.1-flash-lite-preview": {
+      "status": "retired",
+      "sunset": "2026-05-25",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/gemini-3.1-flash-live-preview": {
+      "status": "deprecated",
+      "sunset": "2026-11-17",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/gemini-3.1-flash-tts-preview": {
+      "status": "deprecated",
+      "sunset": "2026-11-17",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/gemini-embedding-001": {
+      "status": "deprecated",
+      "sunset": "2028-05-14",
+      "replacement": null,
+      "note": null
+    },
+    "gemini/gemini-omni-flash-preview": {
+      "status": "deprecated",
+      "sunset": "2026-10-22",
+      "replacement": null,
+      "note": null
+    },
+    "github_copilot/claude-opus-4.8": {
+      "status": "deprecated",
+      "sunset": "2026-11-16",
+      "replacement": null,
+      "note": null
+    },
+    "github_copilot/claude-opus-5": {
+      "status": "deprecated",
+      "sunset": "2026-11-16",
+      "replacement": null,
+      "note": null
+    },
+    "github_copilot/claude-sonnet-4.6": {
+      "status": "retired",
+      "sunset": "2026-09-01",
+      "replacement": null,
+      "note": null
+    },
+    "github_copilot/gemini-3.7-flash": {
+      "status": "retired",
+      "sunset": "2026-10-19",
+      "replacement": null,
+      "note": null
+    },
+    "github_copilot/gpt-5-mini": {
+      "status": "retired",
+      "sunset": "2026-10-19",
+      "replacement": null,
+      "note": null
+    },
+    "github_copilot/gpt-5.4": {
+      "status": "retired",
+      "sunset": "2026-10-19",
+      "replacement": null,
+      "note": null
+    },
+    "github_copilot/gpt-5.4-mini": {
+      "status": "retired",
+      "sunset": "2026-10-19",
+      "replacement": null,
+      "note": null
+    },
+    "github_copilot/gpt-5.5": {
+      "status": "retired",
+      "sunset": "2026-10-19",
+      "replacement": null,
+      "note": null
+    },
+    "github_copilot/gpt-5.6-terra": {
+      "status": "deprecated",
+      "sunset": "2026-11-16",
+      "replacement": null,
+      "note": null
+    },
+    "github_copilot/grok-4.5": {
+      "status": "retired",
+      "sunset": "2026-10-19",
+      "replacement": null,
+      "note": null
+    },
+    "global.anthropic.claude-sonnet-4-20250514-v1:0": {
+      "status": "retired",
+      "sunset": "2026-10-14",
+      "replacement": null,
+      "note": null
+    },
+    "global.anthropic.claude-sonnet-4-5-20250929-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-04-08",
+      "replacement": null,
+      "note": null
+    },
+    "global.twelvelabs.pegasus-1-2-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-22",
+      "replacement": null,
+      "note": null
+    },
+    "google.gemma-3-12b-it": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "google.gemma-3-27b-it": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "google.gemma-3-4b-it": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-3.5-turbo": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-3.5-turbo-0125": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-3.5-turbo-1106": {
+      "status": "retired",
+      "sunset": "2026-09-28",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-3.5-turbo-16k": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-3.5-turbo-instruct": {
+      "status": "retired",
+      "sunset": "2026-09-28",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4-0314": {
+      "status": "retired",
+      "sunset": "2024-06-13",
+      "replacement": "gpt-4o",
+      "note": "OpenAI shut down the gpt-4-0314 snapshot on 2024-06-13. LiteLLM no longer lists it, so ModelDrift pins the last published $30 / $60 per 1M token rates."
+    },
+    "gpt-4-0613": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4-1106-preview": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4-turbo": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4-turbo-2024-04-09": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4.1-2025-04-14": {
+      "status": "deprecated",
+      "sunset": "2027-01-14",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4.1-mini-2025-04-14": {
+      "status": "deprecated",
+      "sunset": "2027-01-14",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4.1-nano": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4.1-nano-2025-04-14": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-2024-05-13": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-2024-08-06": {
+      "status": "deprecated",
+      "sunset": "2027-01-14",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-2024-11-20": {
+      "status": "deprecated",
+      "sunset": "2027-01-14",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-audio-preview-2024-12-17": {
+      "status": "deprecated",
+      "sunset": "2027-01-20",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-audio-preview-2025-06-03": {
+      "status": "deprecated",
+      "sunset": "2027-01-20",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-mini-2024-07-18": {
+      "status": "deprecated",
+      "sunset": "2027-01-14",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-mini-audio-preview-2024-12-17": {
+      "status": "deprecated",
+      "sunset": "2027-01-20",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-mini-realtime-preview-2024-12-17": {
+      "status": "deprecated",
+      "sunset": "2027-01-20",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-mini-search-preview-2025-03-11": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-mini-transcribe": {
+      "status": "deprecated",
+      "sunset": "2027-02-26",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-mini-transcribe-2025-03-20": {
+      "status": "deprecated",
+      "sunset": "2027-01-20",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-mini-tts-2025-03-20": {
+      "status": "deprecated",
+      "sunset": "2027-01-06",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-mini-tts-2025-12-15": {
+      "status": "deprecated",
+      "sunset": "2027-01-06",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-search-preview-2025-03-11": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-transcribe": {
+      "status": "deprecated",
+      "sunset": "2027-02-26",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-4o-transcribe-diarize": {
+      "status": "deprecated",
+      "sunset": "2027-02-26",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5-2025-08-07": {
+      "status": "deprecated",
+      "sunset": "2026-12-11",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5-chat": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5-chat-latest": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5-codex": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5-mini-2025-08-07": {
+      "status": "deprecated",
+      "sunset": "2026-12-11",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5-nano-2025-08-07": {
+      "status": "deprecated",
+      "sunset": "2026-12-11",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5-pro-2025-10-06": {
+      "status": "deprecated",
+      "sunset": "2026-12-11",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5.1": {
+      "status": "deprecated",
+      "sunset": "2027-04-01",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5.1-chat-latest": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5.1-codex": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5.1-codex-max": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5.1-codex-mini": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5.2-chat-latest": {
+      "status": "retired",
+      "sunset": "2026-08-10",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5.2-codex": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5.3-chat-latest": {
+      "status": "retired",
+      "sunset": "2026-08-10",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5.3-codex": {
+      "status": "deprecated",
+      "sunset": "2027-04-01",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-5.4-nano": {
+      "status": "deprecated",
+      "sunset": "2027-04-01",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-audio": {
+      "status": "deprecated",
+      "sunset": "2027-01-20",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-audio-2025-08-28": {
+      "status": "deprecated",
+      "sunset": "2027-01-20",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-audio-mini": {
+      "status": "deprecated",
+      "sunset": "2027-01-20",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-audio-mini-2025-10-06": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-audio-mini-2025-12-15": {
+      "status": "deprecated",
+      "sunset": "2027-01-20",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-image-1": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-image-1-mini": {
+      "status": "deprecated",
+      "sunset": "2026-12-01",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-image-1.5": {
+      "status": "deprecated",
+      "sunset": "2026-12-01",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-image-1.5-2025-12-16": {
+      "status": "deprecated",
+      "sunset": "2026-12-01",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-realtime": {
+      "status": "deprecated",
+      "sunset": "2027-01-20",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-realtime-2025-08-28": {
+      "status": "deprecated",
+      "sunset": "2027-01-20",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-realtime-mini": {
+      "status": "deprecated",
+      "sunset": "2027-01-20",
+      "replacement": null,
+      "note": null
+    },
+    "gpt-realtime-mini-2025-12-15": {
+      "status": "deprecated",
+      "sunset": "2027-01-20",
+      "replacement": null,
+      "note": null
+    },
+    "groq/llama-guard-3-8b": {
+      "status": "retired",
+      "sunset": "2025-06-06",
+      "replacement": null,
+      "note": null
+    },
+    "jp.anthropic.claude-sonnet-4-5-20250929-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-04-08",
+      "replacement": null,
+      "note": null
+    },
+    "meta.llama3-1-405b-instruct-v1:0": {
+      "status": "retired",
+      "sunset": "2026-07-07",
+      "replacement": null,
+      "note": null
+    },
+    "meta.llama3-1-70b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "meta.llama3-1-8b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "meta.llama3-2-11b-instruct-v1:0": {
+      "status": "retired",
+      "sunset": "2026-07-07",
+      "replacement": null,
+      "note": null
+    },
+    "meta.llama3-2-1b-instruct-v1:0": {
+      "status": "retired",
+      "sunset": "2026-07-07",
+      "replacement": null,
+      "note": null
+    },
+    "meta.llama3-2-3b-instruct-v1:0": {
+      "status": "retired",
+      "sunset": "2026-07-07",
+      "replacement": null,
+      "note": null
+    },
+    "meta.llama3-2-90b-instruct-v1:0": {
+      "status": "retired",
+      "sunset": "2026-07-07",
+      "replacement": null,
+      "note": null
+    },
+    "meta.llama3-3-70b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "meta.llama3-70b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "meta.llama3-8b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "meta.llama4-maverick-17b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "meta.llama4-scout-17b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "minimax.minimax-m2": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "minimax.minimax-m2.1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "mistral.devstral-2-123b": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "mistral.mistral-7b-instruct-v0:2": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "mistral.mixtral-8x7b-instruct-v0:1": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "mistral.voxtral-mini-3b-2507": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "mistral.voxtral-small-24b-2507": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "mistral/labs-leanstral-1-5": {
+      "status": "retired",
+      "sunset": "2026-09-30",
+      "replacement": null,
+      "note": null
+    },
+    "mistral/zai-glm-5-2": {
+      "status": "deprecated",
+      "sunset": "2026-10-31",
+      "replacement": null,
+      "note": null
+    },
+    "moonshot.kimi-k2-thinking": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "multimodalembedding@001": {
+      "status": "deprecated",
+      "sunset": "2027-04-01",
+      "replacement": null,
+      "note": null
+    },
+    "nvidia.nemotron-nano-12b-v2": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "nvidia.nemotron-nano-9b-v2": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "o1": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "o1-2024-12-17": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "o1-pro": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "o1-pro-2025-03-19": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "o3-2025-04-16": {
+      "status": "deprecated",
+      "sunset": "2026-12-11",
+      "replacement": null,
+      "note": null
+    },
+    "o3-deep-research": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "o3-deep-research-2025-06-26": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "o3-mini": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "o3-mini-2025-01-31": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "o3-pro-2025-06-10": {
+      "status": "deprecated",
+      "sunset": "2026-12-11",
+      "replacement": null,
+      "note": null
+    },
+    "o4-mini": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "o4-mini-2025-04-16": {
+      "status": "deprecated",
+      "sunset": "2026-10-23",
+      "replacement": null,
+      "note": null
+    },
+    "o4-mini-deep-research": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "o4-mini-deep-research-2025-06-26": {
+      "status": "retired",
+      "sunset": "2026-07-23",
+      "replacement": null,
+      "note": null
+    },
+    "qwen.qwen3-coder-30b-a3b-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "qwen.qwen3-coder-480b-a35b-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "scaleway/mistralai/pixtral-12b-2409": {
+      "status": "retired",
+      "sunset": "2026-10-01",
+      "replacement": null,
+      "note": null
+    },
+    "scaleway/qwen/qwen3-coder-30b-a3b-instruct": {
+      "status": "retired",
+      "sunset": "2026-10-01",
+      "replacement": null,
+      "note": null
+    },
+    "text-embedding-004": {
+      "status": "deprecated",
+      "sunset": "2027-04-01",
+      "replacement": null,
+      "note": null
+    },
+    "text-embedding-005": {
+      "status": "deprecated",
+      "sunset": "2027-04-01",
+      "replacement": null,
+      "note": null
+    },
+    "text-multilingual-embedding-002": {
+      "status": "deprecated",
+      "sunset": "2027-04-01",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/deepseek-ai/deepseek-coder-33b-instruct": {
+      "status": "retired",
+      "sunset": "2024-08-22",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/deepseek-ai/DeepSeek-R1-Distill-Llama-70B": {
+      "status": "retired",
+      "sunset": "2025-12-23",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B": {
+      "status": "retired",
+      "sunset": "2025-08-28",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/deepseek-ai/DeepSeek-R1-Distill-Qwen-14B": {
+      "status": "retired",
+      "sunset": "2025-11-13",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/deepseek-ai/DeepSeek-V3.1": {
+      "status": "retired",
+      "sunset": "2026-05-14",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/deepseek-ai/DeepSeek-V4-Flash-0731": {
+      "status": "deprecated",
+      "sunset": "2026-10-22",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/google/gemma-2-27b-it": {
+      "status": "retired",
+      "sunset": "2025-08-28",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/google/gemma-4-31B-it": {
+      "status": "retired",
+      "sunset": "2026-09-15",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/meta-llama/Llama-3-8b-chat-hf": {
+      "status": "retired",
+      "sunset": "2025-08-28",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/meta-llama/Llama-3.3-70B-Instruct-Turbo": {
+      "status": "deprecated",
+      "sunset": "2026-10-22",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/meta-llama/Llama-4-Scout-17B-16E-Instruct": {
+      "status": "retired",
+      "sunset": "2026-02-06",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/meta-llama/Meta-Llama-3-70B-Instruct-Turbo": {
+      "status": "retired",
+      "sunset": "2025-12-23",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/meta-llama/Meta-Llama-3-8B-Instruct": {
+      "status": "retired",
+      "sunset": "2025-08-28",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo": {
+      "status": "retired",
+      "sunset": "2026-02-25",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo": {
+      "status": "retired",
+      "sunset": "2026-03-06",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/mistralai/Mistral-7B-Instruct-v0.1": {
+      "status": "retired",
+      "sunset": "2025-11-13",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/mistralai/Mistral-Small-24B-Instruct-2501": {
+      "status": "retired",
+      "sunset": "2026-04-02",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/mistralai/Mixtral-8x7B-Instruct-v0.1": {
+      "status": "retired",
+      "sunset": "2026-04-16",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/moonshotai/Kimi-K2.6": {
+      "status": "retired",
+      "sunset": "2026-08-19",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/moonshotai/Kimi-K2.7-Code": {
+      "status": "retired",
+      "sunset": "2026-08-27",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO": {
+      "status": "retired",
+      "sunset": "2025-08-28",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/nvidia/Llama-3.1-Nemotron-70B-Instruct-HF": {
+      "status": "retired",
+      "sunset": "2025-08-28",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/nvidia/nemotron-3-ultra-550b-a55b": {
+      "status": "retired",
+      "sunset": "2026-08-27",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/nvidia/NVIDIA-Nemotron-Nano-9B-v2": {
+      "status": "retired",
+      "sunset": "2026-02-25",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/openai/gpt-oss-20b": {
+      "status": "retired",
+      "sunset": "2026-09-15",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/Qwen/Qwen2-72B-Instruct": {
+      "status": "retired",
+      "sunset": "2025-08-28",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/Qwen/Qwen2-VL-72B-Instruct": {
+      "status": "retired",
+      "sunset": "2025-08-28",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/Qwen/Qwen2.5-72B-Instruct-Turbo": {
+      "status": "retired",
+      "sunset": "2026-02-06",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/Qwen/Qwen2.5-Coder-32B-Instruct": {
+      "status": "retired",
+      "sunset": "2025-11-13",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/Qwen/Qwen2.5-VL-72B-Instruct": {
+      "status": "retired",
+      "sunset": "2026-01-05",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8": {
+      "status": "retired",
+      "sunset": "2026-06-04",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/Qwen/Qwen3-Coder-Next-FP8": {
+      "status": "retired",
+      "sunset": "2026-05-14",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/Qwen/Qwen3-Next-80B-A3B-Instruct": {
+      "status": "retired",
+      "sunset": "2026-04-02",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/Qwen/Qwen3-Next-80B-A3B-Thinking": {
+      "status": "retired",
+      "sunset": "2026-02-25",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/Qwen/Qwen3-VL-32B-Instruct": {
+      "status": "retired",
+      "sunset": "2026-02-25",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/Qwen/Qwen3-VL-8B-Instruct": {
+      "status": "retired",
+      "sunset": "2026-04-16",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/Qwen/Qwen3.5-397B-A17B": {
+      "status": "retired",
+      "sunset": "2026-06-29",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/Qwen/QwQ-32B": {
+      "status": "retired",
+      "sunset": "2025-11-13",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/Salesforce/Llama-Rank-V1": {
+      "status": "retired",
+      "sunset": "2026-02-06",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/zai-org/GLM-4.5-Air-FP8": {
+      "status": "retired",
+      "sunset": "2026-04-02",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/zai-org/GLM-4.7": {
+      "status": "retired",
+      "sunset": "2026-04-02",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/zai-org/GLM-5": {
+      "status": "retired",
+      "sunset": "2026-06-22",
+      "replacement": null,
+      "note": null
+    },
+    "together_ai/zai-org/GLM-5.1": {
+      "status": "retired",
+      "sunset": "2026-07-10",
+      "replacement": null,
+      "note": null
+    },
+    "twelvelabs.marengo-embed-2-7-v1:0": {
+      "status": "deprecated",
+      "sunset": "2026-11-30",
+      "replacement": null,
+      "note": null
+    },
+    "twelvelabs.pegasus-1-2-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-22",
+      "replacement": null,
+      "note": null
+    },
+    "us-gov.nvidia.nemotron-nano-12b-v2": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "us-gov.nvidia.nemotron-nano-9b-v2": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "us.anthropic.claude-opus-4-1-20250805-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-01-08",
+      "replacement": null,
+      "note": null
+    },
+    "us.anthropic.claude-sonnet-4-20250514-v1:0": {
+      "status": "retired",
+      "sunset": "2026-10-14",
+      "replacement": null,
+      "note": null
+    },
+    "us.anthropic.claude-sonnet-4-5-20250929-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-04-08",
+      "replacement": null,
+      "note": null
+    },
+    "us.deepseek.r1-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "us.meta.llama3-1-405b-instruct-v1:0": {
+      "status": "retired",
+      "sunset": "2026-07-07",
+      "replacement": null,
+      "note": null
+    },
+    "us.meta.llama3-1-70b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "us.meta.llama3-1-8b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "us.meta.llama3-2-11b-instruct-v1:0": {
+      "status": "retired",
+      "sunset": "2026-07-07",
+      "replacement": null,
+      "note": null
+    },
+    "us.meta.llama3-2-1b-instruct-v1:0": {
+      "status": "retired",
+      "sunset": "2026-07-07",
+      "replacement": null,
+      "note": null
+    },
+    "us.meta.llama3-2-3b-instruct-v1:0": {
+      "status": "retired",
+      "sunset": "2026-07-07",
+      "replacement": null,
+      "note": null
+    },
+    "us.meta.llama3-2-90b-instruct-v1:0": {
+      "status": "retired",
+      "sunset": "2026-07-07",
+      "replacement": null,
+      "note": null
+    },
+    "us.meta.llama3-3-70b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "us.meta.llama4-maverick-17b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "us.meta.llama4-scout-17b-instruct-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "us.twelvelabs.marengo-embed-2-7-v1:0": {
+      "status": "deprecated",
+      "sunset": "2026-11-30",
+      "replacement": null,
+      "note": null
+    },
+    "us.twelvelabs.pegasus-1-2-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-22",
+      "replacement": null,
+      "note": null
+    },
+    "us.writer.palmyra-x4-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-09",
+      "replacement": null,
+      "note": null
+    },
+    "us.writer.palmyra-x5-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-3-5-haiku": {
+      "status": "retired",
+      "sunset": "2026-07-05",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-3-5-haiku@20241022": {
+      "status": "retired",
+      "sunset": "2026-07-05",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-3-5-sonnet": {
+      "status": "retired",
+      "sunset": "2026-02-19",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-3-5-sonnet@20240620": {
+      "status": "retired",
+      "sunset": "2026-02-19",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-3-haiku": {
+      "status": "retired",
+      "sunset": "2026-08-23",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-3-haiku@20240307": {
+      "status": "retired",
+      "sunset": "2026-08-23",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-3-opus": {
+      "status": "retired",
+      "sunset": "2025-08-01",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-3-opus@20240229": {
+      "status": "retired",
+      "sunset": "2025-08-01",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-fable-5": {
+      "status": "deprecated",
+      "sunset": "2027-06-08",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-fable-5-1": {
+      "status": "deprecated",
+      "sunset": "2027-03-01",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-fable-5-1@default": {
+      "status": "deprecated",
+      "sunset": "2027-03-01",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-fable-5@default": {
+      "status": "deprecated",
+      "sunset": "2027-06-08",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-haiku-4-5": {
+      "status": "retired",
+      "sunset": "2026-10-15",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-haiku-4-5@20251001": {
+      "status": "retired",
+      "sunset": "2026-10-15",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-opus-4-5": {
+      "status": "deprecated",
+      "sunset": "2026-11-24",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-opus-4-5@20251101": {
+      "status": "deprecated",
+      "sunset": "2026-11-24",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-opus-4-6": {
+      "status": "deprecated",
+      "sunset": "2027-02-05",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-opus-4-6@default": {
+      "status": "deprecated",
+      "sunset": "2027-02-05",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-opus-4-7": {
+      "status": "deprecated",
+      "sunset": "2027-04-16",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-opus-4-7@default": {
+      "status": "deprecated",
+      "sunset": "2027-04-16",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-opus-4-8": {
+      "status": "deprecated",
+      "sunset": "2027-05-28",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-opus-4-8@default": {
+      "status": "deprecated",
+      "sunset": "2027-05-28",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-opus-5": {
+      "status": "deprecated",
+      "sunset": "2027-01-24",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-opus-5@default": {
+      "status": "deprecated",
+      "sunset": "2027-01-24",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-sonnet-4-5": {
+      "status": "retired",
+      "sunset": "2026-09-29",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-sonnet-4-5@20250929": {
+      "status": "retired",
+      "sunset": "2026-09-29",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-sonnet-5": {
+      "status": "deprecated",
+      "sunset": "2026-12-24",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/claude-sonnet-5@default": {
+      "status": "deprecated",
+      "sunset": "2026-12-24",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/deepseek-ai/deepseek-ocr-maas": {
+      "status": "retired",
+      "sunset": "2026-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/deepseek-ai/deepseek-r1-0528-maas": {
+      "status": "retired",
+      "sunset": "2026-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/deepseek-ai/deepseek-v3.1-maas": {
+      "status": "retired",
+      "sunset": "2026-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/deepseek-ai/deepseek-v3.2-maas": {
+      "status": "retired",
+      "sunset": "2026-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/gemini-2.0-flash": {
+      "status": "retired",
+      "sunset": "2026-06-01",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/gemini-2.0-flash-lite": {
+      "status": "retired",
+      "sunset": "2026-06-01",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/gemini-2.5-flash-image": {
+      "status": "deprecated",
+      "sunset": "2027-03-15",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/gemini-2.5-flash-native-audio": {
+      "status": "deprecated",
+      "sunset": "2026-12-13",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/gemini-3-pro-image": {
+      "status": "deprecated",
+      "sunset": "2027-05-28",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/gemini-3.1-flash-image": {
+      "status": "deprecated",
+      "sunset": "2027-05-28",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/gemini-3.1-flash-lite": {
+      "status": "deprecated",
+      "sunset": "2027-05-07",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/gemini-3.1-flash-lite-image": {
+      "status": "deprecated",
+      "sunset": "2027-06-28",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/gemini-3.5-flash": {
+      "status": "deprecated",
+      "sunset": "2027-05-19",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/gemini-3.5-flash-lite": {
+      "status": "deprecated",
+      "sunset": "2027-07-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/gemini-3.6-flash": {
+      "status": "deprecated",
+      "sunset": "2026-11-19",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/gemini-3.7-flash": {
+      "status": "deprecated",
+      "sunset": "2027-01-28",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/jamba-1.5": {
+      "status": "retired",
+      "sunset": "2026-02-27",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/jamba-1.5-large": {
+      "status": "retired",
+      "sunset": "2026-02-27",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/jamba-1.5-large@001": {
+      "status": "retired",
+      "sunset": "2026-02-27",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/jamba-1.5-mini": {
+      "status": "retired",
+      "sunset": "2026-02-27",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/jamba-1.5-mini@001": {
+      "status": "retired",
+      "sunset": "2026-02-27",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/meta/llama-3.3-70b-instruct-maas": {
+      "status": "retired",
+      "sunset": "2026-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/minimaxai/minimax-m2-maas": {
+      "status": "retired",
+      "sunset": "2026-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/moonshotai/kimi-k2-thinking-maas": {
+      "status": "retired",
+      "sunset": "2026-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/openai/gpt-oss-20b-maas": {
+      "status": "retired",
+      "sunset": "2026-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/qwen/qwen3-235b-a22b-instruct-2507-maas": {
+      "status": "retired",
+      "sunset": "2026-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/qwen/qwen3-coder-480b-a35b-instruct-maas": {
+      "status": "retired",
+      "sunset": "2026-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/qwen/qwen3-next-80b-a3b-instruct-maas": {
+      "status": "retired",
+      "sunset": "2026-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/qwen/qwen3-next-80b-a3b-thinking-maas": {
+      "status": "retired",
+      "sunset": "2026-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/zai-org/glm-4.7-maas": {
+      "status": "retired",
+      "sunset": "2026-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "vertex_ai/zai-org/glm-5-maas": {
+      "status": "retired",
+      "sunset": "2026-10-21",
+      "replacement": null,
+      "note": null
+    },
+    "wandb/deepseek-ai/DeepSeek-V4-Flash": {
+      "status": "retired",
+      "sunset": "2026-10-05",
+      "replacement": null,
+      "note": null
+    },
+    "wandb/deepseek-ai/DeepSeek-V4-Pro": {
+      "status": "retired",
+      "sunset": "2026-10-05",
+      "replacement": null,
+      "note": null
+    },
+    "wandb/ibm-granite/granite-4.1-8b": {
+      "status": "retired",
+      "sunset": "2026-10-05",
+      "replacement": null,
+      "note": null
+    },
+    "wandb/JetBrains/Mellum2-12B-A2.5B-Instruct": {
+      "status": "retired",
+      "sunset": "2026-10-05",
+      "replacement": null,
+      "note": null
+    },
+    "wandb/meta-llama/Llama-3.1-70B-Instruct": {
+      "status": "retired",
+      "sunset": "2026-10-05",
+      "replacement": null,
+      "note": null
+    },
+    "wandb/OpenPipe/Qwen3-14B-Instruct": {
+      "status": "retired",
+      "sunset": "2026-10-05",
+      "replacement": null,
+      "note": null
+    },
+    "wandb/Qwen/Qwen3-30B-A3B-Instruct-2507": {
+      "status": "retired",
+      "sunset": "2026-10-05",
+      "replacement": null,
+      "note": null
+    },
+    "wandb/Qwen/Qwen3.5-35B-A3B": {
+      "status": "retired",
+      "sunset": "2026-10-05",
+      "replacement": null,
+      "note": null
+    },
+    "wandb/Qwen/Qwen3.6-27B": {
+      "status": "retired",
+      "sunset": "2026-10-05",
+      "replacement": null,
+      "note": null
+    },
+    "writer.palmyra-x4-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-09",
+      "replacement": null,
+      "note": null
+    },
+    "writer.palmyra-x5-v1:0": {
+      "status": "deprecated",
+      "sunset": "2027-03-21",
+      "replacement": null,
+      "note": null
+    },
+    "zai.glm-4.7": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    },
+    "zai.glm-4.7-flash": {
+      "status": "deprecated",
+      "sunset": "2027-03-30",
+      "replacement": null,
+      "note": null
+    }
+  }
+}

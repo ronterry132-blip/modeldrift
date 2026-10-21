@@ -1,0 +1,45 @@
+name: Refresh prices
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PRICES_TOKEN || github.token }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Pull LiteLLM prices
+        run: node scripts/refresh-prices.mjs
+      - name: Open a pull request when the catalog changed
+        env:
+          GH_TOKEN: ${{ secrets.PRICES_TOKEN || github.token }}
+        run: |
+          if git diff --quiet -- data/prices.json data/aliases.json data/deprecations.json; then
+            echo "Catalog is unchanged."
+            exit 0
+          fi
+          branch="data/price-refresh-$(date -u +%Y%m%d)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add data/prices.json data/aliases.json data/deprecations.json
+          git commit -m "chore: refresh LiteLLM price catalog"
+          git push --force-with-lease origin "$branch"
+          if gh pr list --head "$branch" --state open --json number --jq "length > 0" | grep -q true; then
+            echo "Pull request already open for $branch."
+            exit 0
+          fi
+          gh pr create --base main --head "$branch" \
+            --title "Refresh model price catalog" \
+            --body "Daily refresh of \`data/prices.json\`, \`data/aliases.json\`, and \`data/deprecations.json\` from LiteLLM's MIT model price file. Overrides in \`data/overrides.json\` are preserved. sdeep27/llm-pricing-api is not used (no license)."

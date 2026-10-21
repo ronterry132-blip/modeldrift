@@ -1,0 +1,29 @@
+name: Self-test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan examples
+        uses: ./
+        with:
+          path: examples
+          mode: report
+          comment: "false"
+          use-config: "false"
+          fail-on-drift: "false"
+          report-path: modeldrift-report.json
+      - name: Check the drift report
+        run: node scripts/assert-report.mjs modeldrift-report.json self-test/expected-drift.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: modeldrift-report
+          path: modeldrift-report.json

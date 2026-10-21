@@ -1,0 +1,156 @@
+---
+import { badgeSvg } from "../lib/badge.js";
+
+const install = `- uses: actions/checkout@v4
+- uses: ronterry132-blip/modeldrift@v1`;
+const weekly = `on:
+  schedule:
+    - cron: "0 9 * * 1"
+permissions:
+  contents: read
+  issues: write
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ronterry132-blip/modeldrift@v1
+        with:
+          mode: issue`;
+const umamiId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
+const umamiSrc = import.meta.env.PUBLIC_UMAMI_SRC || "https://cloud.umami.is/script.js";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ModelDrift</title>
+    <meta name="description" content="A free GitHub Action that catches hard-coded LLM model names and stale per-token prices." />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preload" as="image" href="/badge.svg" />
+    <!-- Umami: set PUBLIC_UMAMI_WEBSITE_ID (and optional PUBLIC_UMAMI_SRC) in the Pages project. The script stays out of the page until then. -->
+    {umamiId && <script is:inline defer src={umamiSrc} data-website-id={umamiId}></script>}
+  </head>
+  <body>
+    <header>
+      <a class="mark" href="/">ModelDrift</a>
+      <img src="/badge.svg" alt="ModelDrift price check badge" width="168" height="20" />
+    </header>
+    <main>
+      <p class="kicker">Free GitHub Action · MIT · no servers required</p>
+      <h1>Hard-coded model prices go stale. Catch them in CI.</h1>
+      <p class="lede">
+        ModelDrift scans a repository for LLM model ids and per-token rates, compares them with a public price catalog, and reports price changes, deprecated or retired models, and names it does not recognize.
+      </p>
+      <section>
+        <h2>Install</h2>
+        <pre><code>{install}</code></pre>
+        <p>Pull requests get one updated comment. Add <code>fail-on-drift: true</code> when a stale rate should fail the job. Give the workflow <code>pull-requests: write</code>.</p>
+      </section>
+      <section>
+        <h2>What it reports</h2>
+        <ul>
+          <li><strong>Price changed.</strong> A hard-coded input or output rate differs from the catalog by more than the tolerance (default 1%).</li>
+          <li><strong>Deprecated or retired.</strong> The model has a sunset date, including snapshots pinned in <code>data/overrides.json</code> after upstream drops them.</li>
+          <li><strong>Unknown model.</strong> The literal looks like a model id and is not in the catalog or alias map.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Weekly issue</h2>
+        <pre><code>{weekly}</code></pre>
+        <p>On a schedule the action opens or updates one issue labeled <code>modeldrift</code>, and closes it when the scan is clean.</p>
+      </section>
+      <section>
+        <h2>Zero-cost pieces</h2>
+        <p>
+          The action runs on GitHub-hosted runners and ships a catalog transformed from LiteLLM's MIT price file. A Cloudflare Worker in <code>worker/</code> can serve <code>GET /prices</code> from KV, and this page is a static Astro build for Cloudflare Pages. Analytics stays off until Umami env vars are set.
+        </p>
+        <p>Badge endpoint: <a href="/badge.svg"><code>/badge.svg</code></a>, <a href="/badge.svg?status=drift&amp;count=3"><code>?status=drift&amp;count=3</code></a>, <a href="/badge.svg?status=ok"><code>?status=ok</code></a>.</p>
+        <div class="badges" aria-hidden="true">
+          <Fragment set:html={badgeSvg(null, null)} />
+          <Fragment set:html={badgeSvg("drift", "3")} />
+          <Fragment set:html={badgeSvg("ok", null)} />
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>MIT. Price data is transformed from BerriAI/litellm, also MIT. See <code>data/NOTICE.md</code>.</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  :root {
+    color: #1c1915;
+    background: #f4efe6;
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+  }
+  body {
+    margin: 0 auto;
+    max-width: 46rem;
+    padding: 2rem 1.25rem 4rem;
+  }
+  header, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .mark {
+    color: inherit;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+  .kicker {
+    color: #9a3412;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+    margin: 0.2rem 0 1rem;
+  }
+  h2 {
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+  }
+  .lede, p, li {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+  section {
+    border-top: 1px solid #d9d0c1;
+    margin-top: 1.5rem;
+    padding-top: 0.25rem;
+  }
+  pre {
+    background: #1c1915;
+    border-radius: 6px;
+    color: #f4efe6;
+    overflow-x: auto;
+    padding: 1rem 1.1rem;
+  }
+  code {
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 0.86rem;
+  }
+  a { color: #9a3412; }
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  footer {
+    border-top: 1px solid #d9d0c1;
+    margin-top: 2rem;
+    padding-top: 1rem;
+  }
+</style>

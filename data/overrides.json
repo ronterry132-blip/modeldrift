@@ -1,0 +1,15 @@
+{
+  "models": {
+    "gpt-4-0314": {
+      "provider": "openai",
+      "inputPerMillion": 30,
+      "outputPerMillion": 60,
+      "mode": "chat",
+      "deprecationDate": "2024-06-13",
+      "status": "retired",
+      "replacement": "gpt-4o",
+      "note": "OpenAI shut down the gpt-4-0314 snapshot on 2024-06-13. LiteLLM no longer lists it, so ModelDrift pins the last published $30 / $60 per 1M token rates."
+    }
+  },
+  "aliases": {}
+}

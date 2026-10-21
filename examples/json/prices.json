@@ -1,0 +1,8 @@
+{
+  "models": {
+    "gpt-4-turbo": {
+      "input_per_million": 100,
+      "output_per_million": 100
+    }
+  }
+}

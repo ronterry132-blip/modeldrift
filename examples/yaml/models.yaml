@@ -1,0 +1,5 @@
+# Unknown model id. USD per 1M tokens.
+models:
+  - name: gpt-drift-unknown
+    input_per_million: 1
+    output_per_million: 2

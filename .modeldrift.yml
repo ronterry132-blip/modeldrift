@@ -1,0 +1,13 @@
+# Product source in this repo should not hard-code model prices.
+# Fixtures, the generated catalog, and the action implementation are ignored
+# so the weekly issue workflow stays quiet unless drift lands in real code.
+ignore:
+  - examples/**
+  - data/**
+  - action/**
+  - site/**
+  - worker/**
+  - scripts/**
+  - self-test/**
+  - .github/**
+tolerance: 0.01

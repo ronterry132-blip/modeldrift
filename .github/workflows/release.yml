@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: action/package-lock.json
+      - name: Test and rebuild dist
+        working-directory: action
+        run: npm ci && npm test && npm run build
+      - name: Dist must already be committed
+        run: git diff --exit-code -- action/dist
+      - name: Publish the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            --title "ModelDrift ${GITHUB_REF_NAME}" \
+            --notes "GitHub release for Marketplace. Publishing the Marketplace listing is a separate step in the GitHub UI and is not done by this workflow."
